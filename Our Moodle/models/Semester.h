@@ -12,8 +12,8 @@ struct Semester {
 	Date startDate, endDate;
 
 	/* LINK */
-	int nStudent; // number of students
-	string* studentsId; // list of students
+	int nClass; // number of students
+	string* classesId; // list of students
 	int nCourse; // number of course
 	string* coursesId; // list of courses
 	int year; // belong to which school year

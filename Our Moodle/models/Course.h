@@ -17,6 +17,7 @@ struct Course {
 	int maxCapacity; // maximum number of students
 
 	/* LINK */
+	int year;
 	int nStudent; // number of students
 	string* studentsId; // list of students ID
 
