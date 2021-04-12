@@ -10,7 +10,7 @@ struct Student {
 	/* OBJECT */
 	int id;
 	string firstName;
-	string LastName;
+	string lastName;
 	bool gender; // 0 = female, 1 = male
 	Date dob; // date of birth
 	string socialId;
