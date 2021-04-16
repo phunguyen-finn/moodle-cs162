@@ -2,17 +2,18 @@
 #define HEADER_CLASS_INCLUDED
 
 #include <string>
+#include "..\utils\vector.h"
 
 using namespace std;
 
 struct Class {
 	/* OBJECT */
-	string id;
+	string name;
 
 	/* LINK */
 	int yearOfClass; // the school year that this class is first introduced
-	int nStudent; // number of students
-	string* studentsId; // list of students
+
+	Class(): name(), yearOfClass() {}
 };
 
 #endif

@@ -13,28 +13,56 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Models">
+    <Filter Include="Models">
       <UniqueIdentifier>{8291f8a8-a213-4bcb-bac7-ed84ee9a1acf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Class.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\Class.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Course.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\Course.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\Date.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Semester.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\Semester.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\Student.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SchoolYear.h">
-      <Filter>Header Files\Models</Filter>
+    <ClInclude Include="models\User.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="models\SchoolYear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controllers\schoolYear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\course.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
+    <None Include="Debug\Our Moodle.exe.recipe" />
+    <None Include="controllers\semester.cpp" />
   </ItemGroup>
 </Project>
