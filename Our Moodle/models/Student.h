@@ -2,6 +2,7 @@
 #define INCLUDE_STUDENT_H
 
 #include <string>
+#include "../utils/vector.h"
 #include "Date.h"
 
 using namespace std;
@@ -17,6 +18,6 @@ struct Student {
 
 	/* LINK */
 	string classId;
-	string* coursesId;
+	Vector<string> coursesId;
 };
 #endif

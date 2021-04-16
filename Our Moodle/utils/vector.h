@@ -1,0 +1,54 @@
+#ifndef INCLUDE_VECTOR_H
+#define INCLUDE_VECTOR_H
+
+#include <stdlib.h>
+
+template <typename T> class Vector {
+public:
+
+	T* arr;
+	int capacity;
+	int current;
+
+	Vector() {
+		arr = new T[1];
+		capacity = 1;
+		current = 0;
+	}
+
+	void reserve() {
+		T* temp = new T[capacity*(int)2];
+		for (int i = 0; i < capacity; i++)
+			temp[i] = arr[i];
+
+		delete[] arr;
+		capacity *= 2;
+		arr = temp;
+	}
+
+	T& operator[](int index) {
+		if (index >= current) {
+			abort();
+		}
+		return arr[index];
+	}
+
+	void push(T data) {
+		if (current == capacity) reserve();
+		arr[current++] = data;
+	}
+
+	void pop() {
+		current--;
+	}
+
+	int size() {
+		return current;
+	}
+
+	int getCapacity() {
+		return capacity;
+	}
+};
+
+#endif
