@@ -6,7 +6,8 @@ struct Date {
 	int day, month, year;
 
 	/* CONSTRUCTOR */
-	Date(int day = -1, int month = -1, int year = -1) :
+	Date() : day(), month(), year() {}
+	Date(int day, int month, int year) :
 		day(day), month(month), year(year)
 	{}
 };

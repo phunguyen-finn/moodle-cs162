@@ -139,26 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="models\Class.h" />
-    <ClInclude Include="models\Course.h" />
-    <ClInclude Include="models\Date.h" />
-    <ClInclude Include="models\SchoolYear.h" />
-    <ClInclude Include="models\Semester.h" />
-    <ClInclude Include="models\Student.h" />
-    <ClInclude Include="models\User.h" />
-    <ClInclude Include="utils\vector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="controllers\class.cpp" />
-    <ClCompile Include="controllers\course.cpp" />
-    <ClCompile Include="controllers\schoolYear.cpp" />
-    <ClCompile Include="controllers\student.cpp" />
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="controllers\semester.cpp" />
-    <None Include="Debug\Our Moodle.exe.recipe" />
-    <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
+    <ClInclude Include="Class.h" />
+    <ClInclude Include="Course.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Semester.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="SchoolYear.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
