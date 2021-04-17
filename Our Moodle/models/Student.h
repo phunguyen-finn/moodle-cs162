@@ -17,7 +17,7 @@ struct Student {
 	string socialId;
 
 	/* LINK */
-	string classId;
+	string className;
 	Vector<string> coursesId;
 };
 #endif

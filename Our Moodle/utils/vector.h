@@ -16,6 +16,20 @@ public:
 		current = 0;
 	}
 
+	void clear_all() {
+		delete[] arr;
+		arr = new T[1];
+		capacity = 1;
+		current = 0;
+	}
+
+	void erase(int index) {
+		for (int i = index; i < current - 1; i++) {
+			arr[i] = arr[i + 1];
+		}
+		current--;
+	}
+
 	void reserve() {
 		T* temp = new T[capacity*(int)2];
 		for (int i = 0; i < capacity; i++)
@@ -48,6 +62,10 @@ public:
 
 	int getCapacity() {
 		return capacity;
+	}
+
+	~Vector() {
+		delete [] arr;
 	}
 };
 

@@ -59,6 +59,9 @@
     <ClCompile Include="controllers\course.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="controllers\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />

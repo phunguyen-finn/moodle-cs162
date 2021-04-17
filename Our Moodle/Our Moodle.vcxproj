@@ -153,6 +153,7 @@
     <ClCompile Include="controllers\course.cpp" />
     <ClCompile Include="controllers\schoolYear.cpp" />
     <ClCompile Include="controllers\student.cpp" />
+    <ClCompile Include="controllers\user.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>

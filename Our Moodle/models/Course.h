@@ -14,7 +14,7 @@ struct Course {
 	string name;
 	string teacher;
 	int nCredit; // number of credits
-	int session[c_NWeekDay]; // sessions the course is taught during weekdays
+	int *session; // sessions the course is taught during weekdays
 	int maxCapacity; // maximum number of students
 
 	/* LINK */
@@ -22,6 +22,8 @@ struct Course {
 	Vector<int> studentsId; // list of students ID
 
 	/* CONSTRUCTOR */
-	Course(): maxCapacity(c_MaxCapInit), nCredit(), session(), studentsId(), semesterId() {}
+	Course(): maxCapacity(c_MaxCapInit), nCredit(), session(), studentsId(), semesterId() {
+		session = new int[c_NWeekDay];
+	}
 };
 #endif
