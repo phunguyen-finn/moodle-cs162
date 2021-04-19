@@ -1,0 +1,140 @@
+1
+CS162
+Introduction to Programming 2
+20APCS1
+dbtien
+Dinh Ba Tien
+Doctor
+Male
+22/2/2021
+7/5/2021
+Monday,Firday
+7:30
+9:10
+I41
+2
+CS162
+Introduction to Programming 2
+20APCS2
+dbtien
+Dinh Ba Tien
+Doctor
+Male
+22/2/2021
+7/5/2021
+Monday,Firday
+9:30
+11:10
+I42
+3
+MTH252
+Calculus II
+20APCS1
+nhanh
+Nguyen Huu Anh
+Prof
+Male
+23/2/2021
+6/5/2021
+Tuesday,Thursday
+9:30
+11:10
+I41
+4
+MTH252
+Calculus II
+20APCS2
+nttvan
+Nguyen Thi Thu Van
+Prof
+Female
+23/2/2021
+6/5/2021
+Tuesday,Thursday
+9:30
+11:10
+I42
+5
+PH212
+General Physics II
+20APCS1
+nhnha
+Nguyen Huu Nha
+Prof
+Male
+25/2/2021
+7/5/2021
+Thursday,Firday
+13:30
+15:10
+I41
+6
+PH212
+General Physics II
+20APCS2
+nhnha
+Nguyen Huu Nha
+Prof
+Male
+25/2/2021
+7/5/2021
+Thursday, Firday
+15:30
+17:10
+I42
+7
+PLD001
+Introduction To Laws
+20APCS
+dktnguyen
+Duong Kim The Nguyen
+Doctor
+Male
+24/2/2021
+5/5/2021
+Wednesday
+13:30
+17:10
+HTI
+8
+BAA0010
+Marxist-Leninist Political Economics
+20APCS
+ntphuong
+Ngo Tuan Phuong
+Doctor
+Male
+23/2/2021
+4/5/2021
+Tuesday
+13:30
+17:10
+HTI
+9
+BAA00104
+Physical Education
+20APCS1
+nvhung
+Nguyen Van Hung
+Doctor
+Male
+1/3/2021
+5/5/2021
+Wednesday
+7:30
+11:10
+SVD
+10
+BAA00104
+Physical Education
+20APCS2
+ptlhang
+Pham Thi Le Hang
+Doctor
+Female
+1/3/2021
+5/5/2021
+Wednesday
+7:30
+11:10
+SVD

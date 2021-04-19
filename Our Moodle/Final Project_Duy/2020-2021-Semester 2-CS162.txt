@@ -1,0 +1,84 @@
+83
+20125004,Hoang Hiep,20APCS1,Male
+20125005,Le Bao Hiep,20APCS1,Male
+20125006,Nguyen Hoang Khang,20APCS1,Male
+20125007,Nguyen Vu Dang Khoa,20APCS1,Male
+20125009,Ta Quang Khoi,20APCS1,Male
+20125010,Tran Bao Loi,20APCS1,Male
+20125011,Nguyen Quang Long,20APCS1,Male
+20125012,Nguyen Duc Manh,20APCS1,Male
+20125014,Thai Viet Nhat,20APCS1,Male
+20125015,Nguyen Phong Phu,20APCS1,Male
+20125017,Nguyen Nham Tan,20APCS1,Male
+20125019,To Tuan An,20APCS1,Male
+20125021,Luong Hoang Chau,20APCS1,Male
+20125023,Vu Hoang Dat,20APCS1,Male
+20125025,Duong Tuan Dung,20APCS1,Male
+20125027,Phan Minh Duy,20APCS1,Male
+20125029,Tu Khai Hoai,20APCS1,Male
+20125031,Pham Viet Hoang,20APCS1,Male
+20125032,Truong Viet Hoang,20APCS1,Male
+20125033,Le Minh Huan,20APCS1,Male
+20125034,Vo Bui Phu Hung,20APCS1,Male
+20125038,Le Nguyen Quang Minh,20APCS1,Male
+20125039,Tran Minh Nam,20APCS1,Male
+20125040,Dinh Vo Truc Ngan,20APCS1,Female
+20125046,Huynh Man Nhu,20APCS1,Female
+20125048,Nguyen Hoai Nam Phuong,20APCS1,Female
+20125052,Lam Hien Toan,20APCS1,Male
+20125054,Van Hoang Yen,20APCS1,Female
+20125058,Nguyen Viet Hung,20APCS1,Male
+20125059,Le Quy Khoi,20APCS1,Male
+20125060,Dinh My Ky,20APCS1,Female
+20125067,Luong Thien Tri,20APCS1,Male
+20125068,Thai Vo Duc Trong,20APCS1,Male
+20125069,Tran Lac Viet,20APCS1,Male
+20125081,Vo Huynh,20APCS1,Male
+20125090,Cao Thanh Duy,20APCS1,Male
+20125101,Vuong Huy Hoang Luong,20APCS1,Male
+20125102,Truong Nhat Minh,20APCS1,Male
+20125106,Le Van Hoang Phi,20APCS1,Male
+20125111,Nguyen Trong Tin,20APCS1,Male
+20125124,Nguyen Minh Uyen,20APCS1,Female
+20125020,Le Quoc Anh,20APCS2,Male
+20125022,Vo Huy Dang,20APCS2,Male
+20125028,Nguyen Nhat Hao,20APCS2,Male
+20125030,Le Minh Hoang,20APCS2,Male
+20125044,Bui Trong Nhan,20APCS2,Male
+20125047,Phan Huynh Tan Phat,20APCS2,Male
+2012504,Nguyen Xuan Quang,20APCS2,Male
+20125051,Tran Nguyen Dang Tam,20APCS2,Male
+20125053,Tran To Bang Trinh,20APCS2,Female
+20125055,Truong Nhat Anh,20APCS2,Female
+20125061,Nguyen Ha Ngoc Linh,20APCS2,Female
+20125070,Le Vo Duc Anh,20APCS2,Male
+2012507,Bui Le Gia Cat,20APCS2,Female
+20125074,Duong Hoang Huy,20APCS2,Male
+20125075,Ha Gia Khang,20APCS2,Male
+2012507,Nguyen Minh Quan,20APCS2,Male
+2012507,Ho Trong Bao,20APCS2,Male
+20125087,Huynh Ba Dong Cat,20APCS2,Male
+20125088,Le Quoc Cuong,20APCS2,Male
+20125089,Quang The Cuong,20APCS2,Male
+20125091,Dang Truong Duy,20APCS2,Male
+20125092,Le Vinh Hien,20APCS2,Male
+20125094,Tran Dao Bao Huan,20APCS2,Male
+20125096,Pham Vinh Khang,20APCS2,Male
+20125097,Le Gia Khanh,20APCS2,Female
+20125098,Pham Dinh Khoi,20APCS2,Male
+20125099,Hoang Thi Minh Khue,20APCS2,Female
+20125100,Ha Thien Loc,20APCS2,Male
+20125104,Mach Vinh Phat,20APCS2,Male
+20125105,Pham Tan Phat,20APCS2,Male
+20125107,Ho Van Quan,20APCS2,Male
+20125108,Truong Kien Quoc,20APCS2,Male
+20125110,Le Pham Nhat Quynh,20APCS2,Male
+20125112,Nguyen Ho Truong Son,20APCS2,Male
+20125113,Nguyen Quang Tan,20APCS2,Male
+20125114,Nguyen Ngoc Thach,20APCS2,Male
+20125115,Pham Quoc Thieu,20APCS2,Male
+2012511,Luu Le Thuan,20APCS2,Male
+20125119,Pham Thanh Tu,20APCS2,Male
+2012512,Ngo Minh Tuan,20APCS2,Male
+20125123,Hoang Thanh Tung,20APCS2,Male
+20125125,Truong Thuy Tuong Vy,20APCS2,Female
