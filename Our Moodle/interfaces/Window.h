@@ -20,18 +20,32 @@ bool studentLogin(string username, string password);
 void Heading();
 
 void LoginWindow();
-    void Student_Menu();
-        void Student_Add_Course();
-        void Student_Remove_Course();
-        void Student_View_Courses();
-        void Student_View_Scoreboard();
-    void Faculty_Menu();
-        void Create_School_Year();
-        void Create_Semester();
-        void Course_Management();
-        void Class_Management();
-        void Student_Management();
-
+    void studentMenu();
+        void studentMenu_addCourse();
+        void studentMenu_removeCourse();
+        void studentMenu_viewCourse();
+        void studentMenu_viewScoreboard();
+    void staffMenu();
+        void staffMenu_createSchoolYear();
+        void staffMenu_createSemester();
+        void staffMenu_courseManagement();
+            void staffMenu_courseManagement_createRegistration();
+            void staffMenu_courseManagement_addCourse();
+            void staffMenu_courseManagement_updateCourse();
+            void staffMenu_courseManagement_deleteCourse();
+            void staffMenu_courseManagement_viewCourse();
+                void staffMenu_courseManagement_viewCourse_viewStudent();
+                void staffMenu_courseManagement_viewCourse_exportScoreboard();
+                void staffMenu_courseManagement_viewCourse_importScoreboard();
+                void staffMenu_courseManagement_viewCourse_viewScoreboard();
+        void staffMenu_classManagement();
+            void staffMenu_classManagement_createClass();
+            void staffMenu_classManagement_viewClass();
+                void staffMenu_classManagement_viewClass_addStudent();
+                void staffMenu_classManagement_viewClass_viewStudent();
+                void staffMenu_classManagement_viewClass_viewScoreboard();
+        void staffMenu_studentManagement();
+            void staffMenu_studentManagement_updateStudentResult();
 
 void delay(unsigned int mseconds)
 {
@@ -126,8 +140,8 @@ void LoginWindow()
     cout << endl;
     // cout << username <<' ' << password << endl;
 
-    if (adminLogin(username, password)) Faculty_Menu(); else 
-    if (studentLogin(username, password)) Student_Menu(); else {
+    if (adminLogin(username, password)) staffMenu(); else 
+    if (studentLogin(username, password)) studentMenu(); else {
         cout << "\t\t\t\t\t\t"; cout << "Unsuccessful login attemp";
         delay(1000); 
     }
@@ -147,7 +161,7 @@ void Heading()
     cout << "\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM \t\t\n\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }
-void Student_Menu()
+void studentMenu()
 {
     int choice; 
     reenter: 
@@ -156,25 +170,25 @@ void Student_Menu()
     cout << "\n\n\t\t\t\t\t\t";
     for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " STUDENT MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
     cout << "\n\n";
-    cout << "\t\t\t\t\t\t    1. Add a course\n\n";
-    cout << "\t\t\t\t\t\t    2. Remove a course\n\n";
-    cout << "\t\t\t\t\t\t    3. My courses\n\n";
-    cout << "\t\t\t\t\t\t    4. My scoreboard\n\n";
-    cout << "\t\t\t\t\t\t    5. Logout\n\n";
+    cout << "\t\t\t\t\t\t   1. Add a course\n\n";
+    cout << "\t\t\t\t\t\t   2. Remove a course\n\n";
+    cout << "\t\t\t\t\t\t   3. My courses\n\n";
+    cout << "\t\t\t\t\t\t   4. My scoreboard\n\n";
+    cout << "\t\t\t\t\t\t   5. Logout\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
     cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice; 
     switch (choice) {
-        case 1: Student_Add_Course(); break;
-        case 2: Student_Remove_Course(); break;
-        case 3: Student_View_Courses(); break;
-        case 4: Student_View_Scoreboard(); break;
+        case 1: studentMenu_addCourse(); break;
+        case 2: studentMenu_removeCourse(); break;
+        case 3: studentMenu_viewCourse(); break;
+        case 4: studentMenu_viewScoreboard(); break;
         case 5: return; 
         default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1000);
     }
     
     goto reenter;
 }
-void Faculty_Menu()
+void staffMenu()
 {
     int choice; 
     reenter:
@@ -183,70 +197,201 @@ void Faculty_Menu()
     cout << "\n\n\t\t\t\t\t\t";
     for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " FACULTY MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
     cout << "\n\n";
-    cout << "\t\t\t\t\t\t  1. Create school year\n\n";
-    cout << "\t\t\t\t\t\t  2. Create semester\n\n";
-    cout << "\t\t\t\t\t\t  3. Course management\n\n";
-    cout << "\t\t\t\t\t\t  4. Class management\n\n";
-    cout << "\t\t\t\t\t\t  5. Student management\n\n";
-    cout << "\t\t\t\t\t\t  6. Logout\n\n";
+    cout << "\t\t\t\t\t\t 1. Create school year\n\n";
+    cout << "\t\t\t\t\t\t 2. Create semester\n\n";
+    cout << "\t\t\t\t\t\t 3. Course management\n\n";
+    cout << "\t\t\t\t\t\t 4. Class management\n\n";
+    cout << "\t\t\t\t\t\t 5. Student management\n\n";
+    cout << "\t\t\t\t\t\t 6. Logout\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
     cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice;
     switch (choice) {
-        case 1: Create_School_Year(); break;
-        case 2: Create_Semester(); break;
-        case 3: Course_Management(); break;
-        case 4: Class_Management(); break;
-        case 5: Student_Management(); break;
+        case 1: staffMenu_createSchoolYear(); break;
+        case 2: staffMenu_createSemester(); break;
+        case 3: staffMenu_courseManagement(); break;
+        case 4: staffMenu_classManagement(); break;
+        case 5: staffMenu_studentManagement(); break;
         case 6: return; 
         default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1000);
     }
 
     goto reenter;
 }
+void staffMenu_courseManagement() {
+    int choice; 
+    reenter:
 
-void Student_Add_Course() {
+    system("CLS"); Heading();
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " COURSE MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+    cout << "\t\t\t\t\t     1. Create course registration\n\n";
+    cout << "\t\t\t\t\t     2. Add a course\n\n";
+    cout << "\t\t\t\t\t     3. Update a course\n\n";
+    cout << "\t\t\t\t\t     4. Delete a course\n\n";
+    cout << "\t\t\t\t\t     5. Choose a course to manage\n\n";
+    cout << "\t\t\t\t\t     6. Go back\n\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
+    cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice;
+    switch (choice) {
+        case 1: staffMenu_courseManagement_createRegistration(); break;
+        case 2: staffMenu_courseManagement_addCourse(); break;
+        case 3: staffMenu_courseManagement_updateCourse(); break;
+        case 4: staffMenu_courseManagement_deleteCourse(); break;
+        case 5: staffMenu_courseManagement_viewCourse(); break;
+        case 6: return; 
+        default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1000);
+    }
+
+    goto reenter;
+}
+void staffMenu_classManagement() {
+    int choice; 
+    reenter:
+
+    system("CLS"); Heading();
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " CLASS MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+    cout << "\t\t\t\t\t      1. Create classes\n\n";
+    cout << "\t\t\t\t\t      2. Choose a class to manage\n\n";
+    cout << "\t\t\t\t\t      3. Go back\n\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
+    cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice;
+    switch (choice) {
+        case 1: staffMenu_classManagement_createClass(); break;
+        case 2: staffMenu_classManagement_viewClass(); break;
+        case 3: return; 
+        default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1000);
+    }
+
+    goto reenter;
+}
+void staffMenu_studentManagement() {
+    int choice; 
+    reenter:
+
+    system("CLS"); Heading();
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " STUDENT MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+    cout << "\t\t\t\t\t\t1. Update student result\n\n";
+    cout << "\t\t\t\t\t\t2. Go back\n\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
+    cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice;
+    switch (choice) {
+        case 1: staffMenu_studentManagement_updateStudentResult(); break;
+        case 2: return; 
+        default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1000);
+    }
+
+    goto reenter;
+}
+void staffMenu_courseManagement_viewCourse() {
     system("CLS");
-    cout << "Student add course - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Student_Remove_Course() {
+void staffMenu_classManagement_viewClass() {
     system("CLS");
-    cout << "Student remove course - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Student_View_Courses() {
+
+void studentMenu_addCourse() {
     system("CLS");
-    cout << "Student view course - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Student_View_Scoreboard() {
+void studentMenu_removeCourse() {
     system("CLS");
-    cout << "Student view scoreboard - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Create_School_Year() {
+void studentMenu_viewCourse() {
     system("CLS");
-    cout << "Create school year - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Create_Semester() {
+void studentMenu_viewScoreboard() {
     system("CLS");
-    cout << "Create semester - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Course_Management() {
+void staffMenu_createSchoolYear() {
     system("CLS");
-    cout << "course mangement - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Class_Management() {
+void staffMenu_createSemester() {
     system("CLS");
-    cout << "class management - not complete";
+    cout << "not complete";
     delay(1000);
 }
-void Student_Management() {
+void staffMenu_courseManagement_createRegistration() {
     system("CLS");
-    cout << "student management - not complete";
+    cout << "not complete";
     delay(1000);
 }
+void staffMenu_courseManagement_addCourse() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_updateCourse() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_deleteCourse() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_viewCourse_viewStudent() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_viewCourse_exportScoreboard() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_viewCourse_importScoreboard() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_courseManagement_viewCourse_viewScoreboard() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_classManagement_createClass() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_classManagement_viewClass_addStudent() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_classManagement_viewClass_viewStudent() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_classManagement_viewClass_viewScoreboard() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+void staffMenu_studentManagement_updateStudentResult() {
+    system("CLS");
+    cout << "not complete";
+    delay(1000);
+}
+
 #endif // !WINDOW_H

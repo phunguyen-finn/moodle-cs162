@@ -4,9 +4,6 @@
 
 using namespace std;
 
-#define ADMIN 1
-#define STUDENT 2
-
 // extern SchoolYear* schoolYear;
 
 int main() {
@@ -15,6 +12,5 @@ int main() {
 	Loading();
 	LoginWindow(); 
 	
-	system("pause");
 	return 0;
 }
