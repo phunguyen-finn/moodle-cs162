@@ -35,25 +35,25 @@ void LoginWindow();
 
 void delay(unsigned int mseconds)
 {
-	clock_t goal = mseconds + clock();
-	while (goal > clock());
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
 }
 void gotoxy(int x, int y)
 {
-	COORD c;
-	c.X = x;
-	c.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+    COORD c;
+    c.X = x;
+    c.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 void set_console_size()
 {
-     HANDLE hOut;
-     SMALL_RECT DisplayArea = {0, 0, 0, 0};
-     //set x and y to whatever ye' want
-     int x = 125; // 125
-     int y = 55; // 55
+    HANDLE hOut;
+    SMALL_RECT DisplayArea = {0, 0, 0, 0};
+    //set x and y to whatever ye' want
+    int x = 125; // 125
+    int y = 55; // 55
 
-     hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
      DisplayArea.Right  = x;
      DisplayArea.Bottom = y;
 
@@ -61,28 +61,28 @@ void set_console_size()
 }
 void Loading(void)
 {
-	cout << "\n\n\n\n\n\n";
-	cout << "\n\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM";
-	cout << "\n\n\n\n\n\n";
-	cout << "\n\t\t\t\t\t\t\t";
-	cout << "Loading...\n";
+    cout << "\n\n\n\n\n\n";
+    cout << "\n\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM";
+    cout << "\n\n\n\n\n\n";
+    cout << "\n\t\t\t\t\t\t\t";
+    cout << "Loading...\n";
 
-	cout << "\n"; for (int rep = 1; rep <= 120; rep++) cout << "_"; cout << endl;
-	cout << "\n\n"; for (int rep = 1; rep <= 120; rep++) cout << "_"; cout << endl << endl;
+    cout << "\n"; for (int rep = 1; rep <= 120; rep++) cout << "_"; cout << endl;
+    cout << "\n\n"; for (int rep = 1; rep <= 120; rep++) cout << "_"; cout << endl << endl;
 
-	gotoxy(0, 15);
+    gotoxy(0, 15);
 
-	cout << "\n\n\n\n\n  ";
-	for (int rep = 1; rep <= 5; rep++) { cout << char(219); delay(60); }
-	for (int rep = 1; rep <= 10; rep++) { cout << char(219); delay(50); }
-	for (int rep = 1; rep <= 25; rep++) { cout << char(219); delay(40); }
-	for (int rep = 1; rep <= 76; rep++) { cout << char(219); delay(15); }
+    cout << "\n\n\n\n\n  ";
+    for (int rep = 1; rep <= 5; rep++) { cout << char(219); delay(60); }
+    for (int rep = 1; rep <= 10; rep++) { cout << char(219); delay(50); }
+    for (int rep = 1; rep <= 25; rep++) { cout << char(219); delay(40); }
+    for (int rep = 1; rep <= 76; rep++) { cout << char(219); delay(15); }
 
 
-	delay(700);
+    delay(700);
 
-	system("CLS");
-	Beep(700, 100);
+    system("CLS");
+    Beep(700, 100);
 }
 void LoginWindow()
 {
@@ -92,20 +92,20 @@ void LoginWindow()
     username = "";
     password = "";
 
-	cout << "\n\n\n\n\n\n\n";
-	for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
-	cout << "\n";
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; cout << " " << char(220); for (int i = 1; i <= 8; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << char(220); for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << char(220); for (int i = 1; i <= 6; i++)cout << " "; cout << char(220); for (int i = 1; i <= 8; i++)cout << char(219); cout << "\t\t\t             COURSE MANAGEMENT SYSTEM";
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << " "; cout << char(220); for (int i = 1; i <= 2; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << char(223); for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << char(223); for (int i = 1; i <= 2; i++)cout << char(219); cout << char(220); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219);
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(223) << " " << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " ";/**/cout << char(219) << char(223) << " ";
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << "\t\t\t\t          VIETNAM NATIONAL UNIVERSITY";
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << " " << char(223); for (int i = 1; i <= 11; i++)cout << char(219);
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(220) << " " << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); cout << "\t\t\t\t\t     HO CHI MINH CITY";
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(219) << char(219) << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; cout << " " << char(220) << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/cout << char(219) << char(219) << char(219);
-	cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 8; i++)cout << char(219); cout << char(223); for (int i = 1; i <= 3; i++)cout << " "; cout << char(223) << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; cout << char(219) << char(223); for (int i = 1; i <= 3; i++)cout << " "; cout << char(220); for (int i = 1; i <= 8; i++)cout << char(219); cout << char(223); cout << "\t\t\t\t\tUNIVERSITY OF SCIENCE";
-	cout << "\n\n\n"; for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
-	cout << "\n\n\t\t\t\t\t\t";
-	for (int rep = 1; rep <= 9; rep++) cout << char(219); cout << " LOGIN "; for (int rep = 1; rep <= 9; rep++) cout << char(219);
+    cout << "\n\n\n\n\n\n\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
+    cout << "\n";
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; cout << " " << char(220); for (int i = 1; i <= 8; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << char(220); for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << char(220); for (int i = 1; i <= 6; i++)cout << " "; cout << char(220); for (int i = 1; i <= 8; i++)cout << char(219); cout << "\t\t\t             COURSE MANAGEMENT SYSTEM";
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << " "; cout << char(220); for (int i = 1; i <= 2; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << char(223); for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << char(223); for (int i = 1; i <= 2; i++)cout << char(219); cout << char(220); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219);
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(223) << " " << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " ";/**/cout << char(219) << char(223) << " ";
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << "\t\t\t\t          VIETNAM NATIONAL UNIVERSITY";
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 4; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); cout << " " << char(223); for (int i = 1; i <= 11; i++)cout << char(219);
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(220) << " " << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); cout << "\t\t\t\t\t     HO CHI MINH CITY";
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 4; i++)cout << " "; cout << char(219) << char(219) << char(219) << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; cout << " " << char(220) << char(219); for (int i = 1; i <= 3; i++)cout << " ";/**/cout << char(219) << char(219) << char(219);
+    cout << "\n\t"; for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 8; i++)cout << char(219); cout << char(223); for (int i = 1; i <= 3; i++)cout << " "; cout << char(223) << char(219); for (int i = 1; i <= 3; i++)cout << " "; for (int i = 1; i <= 3; i++)cout << char(219); for (int i = 1; i <= 3; i++)cout << " "; cout << char(219) << char(223); for (int i = 1; i <= 3; i++)cout << " "; cout << char(220); for (int i = 1; i <= 8; i++)cout << char(219); cout << char(223); cout << "\t\t\t\t\tUNIVERSITY OF SCIENCE";
+    cout << "\n\n\n"; for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 9; rep++) cout << char(219); cout << " LOGIN "; for (int rep = 1; rep <= 9; rep++) cout << char(219);
     cout << "\n\n\t\t\t\t\t\t"; cout << "Username : "; 
     cout << "\n\n\t\t\t\t\t\t"; cout << "Password : "; 
 
@@ -142,10 +142,10 @@ bool studentLogin(string username, string password) {
 
 void Heading()
 {
-	cout << "\n";
-	for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
-	cout << "\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM \t\t\n\n\n";
-	for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
+    cout << "\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
+    cout << "\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM \t\t\n\n\n";
+    for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }
 void Student_Menu()
 {
@@ -153,14 +153,14 @@ void Student_Menu()
     reenter: 
 
     system("CLS"); Heading();
-	cout << "\n\n\t\t\t\t\t\t";
-	for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " STUDENT MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
-	cout << "\n\n";
-	cout << "\t\t\t\t\t\t    1. Add a course\n\n";
-	cout << "\t\t\t\t\t\t    2. Remove a course\n\n";
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " STUDENT MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+    cout << "\t\t\t\t\t\t    1. Add a course\n\n";
+    cout << "\t\t\t\t\t\t    2. Remove a course\n\n";
     cout << "\t\t\t\t\t\t    3. My courses\n\n";
-	cout << "\t\t\t\t\t\t    4. My scoreboard\n\n";
-	cout << "\t\t\t\t\t\t    5. Logout\n\n";
+    cout << "\t\t\t\t\t\t    4. My scoreboard\n\n";
+    cout << "\t\t\t\t\t\t    5. Logout\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
     cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice; 
     switch (choice) {
@@ -179,16 +179,16 @@ void Faculty_Menu()
     int choice; 
     reenter:
 
-	system("CLS"); Heading();
-	cout << "\n\n\t\t\t\t\t\t";
-	for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " FACULTY MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
-	cout << "\n\n";
-	cout << "\t\t\t\t\t\t  1. Create school year\n\n";
-	cout << "\t\t\t\t\t\t  2. Create semester\n\n";
+    system("CLS"); Heading();
+    cout << "\n\n\t\t\t\t\t\t";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " FACULTY MENU "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+    cout << "\t\t\t\t\t\t  1. Create school year\n\n";
+    cout << "\t\t\t\t\t\t  2. Create semester\n\n";
     cout << "\t\t\t\t\t\t  3. Course management\n\n";
     cout << "\t\t\t\t\t\t  4. Class management\n\n";
     cout << "\t\t\t\t\t\t  5. Student management\n\n";
-	cout << "\t\t\t\t\t\t  6. Logout\n\n";
+    cout << "\t\t\t\t\t\t  6. Logout\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
     cout << "\n\t\t\t\t\t\tEnter Your Choice : "; fflush(stdin); cin >> choice;
     switch (choice) {
