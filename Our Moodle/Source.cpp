@@ -1,5 +1,4 @@
 #include <iostream>
-// #include "./models/SchoolYear.h"
 #include "./interfaces/Window.h"
 
 using namespace std;
