@@ -69,6 +69,30 @@ void LoginWindow();
             // year\semester\classes\class\student\mark.txt
             // year\semester\courses\course\mark.txt
 
+/*
+year
+    semester
+        classes
+            classList.txt
+            class1
+                studentList.txt
+                student1
+                    info.txt
+                    courses.txt
+                    marks.txt
+                student2
+                ...
+            class2
+            ...
+        courses
+            courseList.txt
+            course1
+                students.txt
+                marks.txt
+            course2
+            ...
+*/
+
 void delay(unsigned int mseconds)
 {
     clock_t goal = mseconds + clock();

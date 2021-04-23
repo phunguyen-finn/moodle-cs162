@@ -1,0 +1,3 @@
+courseFolderName1 (string)
+courseFolderName2 (string)
+courseFolderName3 (string)

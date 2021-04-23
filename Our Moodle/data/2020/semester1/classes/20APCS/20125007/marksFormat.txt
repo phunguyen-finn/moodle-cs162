@@ -1,0 +1,3 @@
+courseFolderName1 (string) total mark (float) final mark (float) midterm mark (float) other mark (float)
+courseFolderName2 (string) total mark (float) final mark (float) midterm mark (float) other mark (float)
+courseFolderName3 (string) total mark (float) final mark (float) midterm mark (float) other mark (float)

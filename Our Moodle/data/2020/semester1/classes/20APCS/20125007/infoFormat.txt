@@ -1,0 +1,8 @@
+student ID (string)
+first name (string)
+last name (string)
+gender (string)
+date of birth (struct DoB, làm truct để lát viết hàm compare)
+social ID (string)
+
+
