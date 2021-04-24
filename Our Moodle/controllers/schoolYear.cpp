@@ -1,16 +1,15 @@
 #include "../models/SchoolYear.h"
-#include "../utils/vector.h"
 
-Vector<SchoolYear> schoolYears;
+int YEAR;
 
-int findSchoolYearByYear(int year) {
-	for (int i = 0; i < schoolYears.size(); i++)
-		if (schoolYears[i].year == year) return i;
-	return -1;
+bool isValidYear(string year) {
+    while (year.size() > 1) year.erase(0, 1);
+    for (int c : year) if (c < '0' || '9' < c) return 0;
+    return 1;
 }
-
-bool addSchoolYearByYear(int year) {
-	if (findSchoolYearByYear(year) != -1) return false;
-	schoolYears.push(SchoolYear(year));
-	return true;
+void setCurrentYear(string year) {
+    YEAR = stoi(year);
+}
+int getCurrentYear() {
+    return YEAR;
 }

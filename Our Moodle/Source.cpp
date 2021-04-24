@@ -1,9 +1,4 @@
-#include <iostream>
-#include "./interfaces/Window.h"
-
-using namespace std;
-
-// extern SchoolYear* schoolYear;
+#include "./models/courseManagementSystem.h"
 
 int main() {
 	

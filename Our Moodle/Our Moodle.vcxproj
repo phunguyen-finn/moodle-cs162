@@ -139,13 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="models\Class.h" />
-    <ClInclude Include="models\Course.h" />
-    <ClInclude Include="models\Date.h" />
-    <ClInclude Include="models\SchoolYear.h" />
-    <ClInclude Include="models\Semester.h" />
-    <ClInclude Include="models\Student.h" />
-    <ClInclude Include="models\User.h" />
+    <ClInclude Include="models\class.h" />
+    <ClInclude Include="models\course.h" />
+    <ClInclude Include="models\courseManagementSystem.h" />
+    <ClInclude Include="models\date.h" />
+    <ClInclude Include="models\schoolYear.h" />
+    <ClInclude Include="models\semester.h" />
+    <ClInclude Include="models\student.h" />
+    <ClInclude Include="models\user.h" />
     <ClInclude Include="utils\vector.h" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,34 @@
     <ClCompile Include="controllers\schoolYear.cpp" />
     <ClCompile Include="controllers\student.cpp" />
     <ClCompile Include="controllers\user.cpp" />
+    <ClCompile Include="interfaces\LoginWindow.cpp" />
+    <ClCompile Include="interfaces\staffMenu.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_createClass.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_addStudent.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewScoreboard.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewStudent.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_addCourse.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_createRegistration.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_deleteCourse.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_updateCourse.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_exportScoreboard.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_importScoreboard.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_viewScoreboard.cpp" />
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_viewStudent.cpp" />
+    <ClCompile Include="interfaces\staffMenu_createSchoolYear.cpp" />
+    <ClCompile Include="interfaces\staffMenu_createSemester.cpp" />
+    <ClCompile Include="interfaces\staffMenu_studentManagement.cpp" />
+    <ClCompile Include="interfaces\staffMenu_studentManagement_updateStudentResult.cpp" />
+    <ClCompile Include="interfaces\studentMenu.cpp" />
+    <ClCompile Include="interfaces\studentMenu_addCourse.cpp" />
+    <ClCompile Include="interfaces\studentMenu_removeCourse.cpp" />
+    <ClCompile Include="interfaces\studentMenu_viewCourse.cpp" />
+    <ClCompile Include="interfaces\studentMenu_viewScoreboard.cpp" />
+    <ClCompile Include="interfaces\supportFunctions.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>

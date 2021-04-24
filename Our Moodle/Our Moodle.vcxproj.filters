@@ -18,54 +18,143 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="models\Class.h">
+    <ClInclude Include="models\class.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\Course.h">
+    <ClInclude Include="models\course.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\Date.h">
+    <ClInclude Include="models\date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\Semester.h">
+    <ClInclude Include="models\semester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\Student.h">
+    <ClInclude Include="models\student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\User.h">
+    <ClInclude Include="models\user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="models\SchoolYear.h">
+    <ClInclude Include="models\schoolYear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="models\courseManagementSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="controllers\class.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\course.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
     <ClCompile Include="controllers\schoolYear.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\student.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\user.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="controllers\class.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="interfaces\LoginWindow.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="controllers\student.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="interfaces\staffMenu.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="controllers\course.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="interfaces\staffMenu_classManagement.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="controllers\user.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="interfaces\staffMenu_classManagement_createClass.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_addStudent.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewScoreboard.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewStudent.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_addCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_createRegistration.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_deleteCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_updateCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_exportScoreboard.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_importScoreboard.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_viewScoreboard.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_viewStudent.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_createSchoolYear.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_createSemester.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_studentManagement.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_studentManagement_updateStudentResult.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\studentMenu.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\studentMenu_addCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\studentMenu_removeCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\studentMenu_viewCourse.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\studentMenu_viewScoreboard.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\supportFunctions.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
     <None Include="Debug\Our Moodle.exe.recipe" />
-    <None Include="controllers\semester.cpp" />
+    <None Include="controllers\semester.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
