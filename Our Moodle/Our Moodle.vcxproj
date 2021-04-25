@@ -191,6 +191,10 @@
     <ClCompile Include="controllers\semester.cpp" />
     <None Include="Debug\Our Moodle.exe.recipe" />
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
+    <None Include="Moodle.lnk" />
+    <None Include="UpgradeLog.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

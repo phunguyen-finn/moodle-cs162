@@ -162,5 +162,7 @@
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
     <None Include="Debug\Our Moodle.exe.recipe" />
+    <None Include="Moodle.lnk" />
+    <None Include="UpgradeLog.htm" />
   </ItemGroup>
 </Project>
