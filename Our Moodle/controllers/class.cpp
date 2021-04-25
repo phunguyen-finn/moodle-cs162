@@ -1,15 +1,16 @@
 #include "../models/Class.h"
 
-Vector<Class> classes;
+void createClass(string className) {
+	Semester semester = getCurrentSemester();
+	int year = semester.year;
+	int term = semester.term;
 
-int findClassByName(string name) {
-	for (int i = 0; i < classes.size(); i++)
-		if (classes[i].name == name) return i;
-	return -1;
-}
+	string path = "data/" + to_string(year) + '/' + to_string(term) + "/classes/" + className;
+	_mkdir(path.c_str());
 
-bool addClass(Class newClass) {
-	if (findClassByName(newClass.name) != -1) return false;
-	classes.push(newClass);
-	return true;
+	path = "data/" + to_string(year) + '/' + to_string(term) + "/classes/classList.txt";
+	ofstream fout;
+	fout.open(path, std::fstream::app);
+	fout << className << '\n';
+	fout.close();
 }

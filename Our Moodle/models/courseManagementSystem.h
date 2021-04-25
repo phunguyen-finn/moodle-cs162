@@ -2,11 +2,13 @@
 #define COURSEMANAGEMENTSYSTEM_H
 
 #include <Windows.h>
-#include <time.h>
-#include <iostream>
-#include <conio.h>
 #include <string>
+#include <conio.h>
+#include <iostream>
+#include "commandReader.h"
 #include "schoolYear.h"
+#include "semester.h"
+#include "class.h"
 using namespace std;
 
 void gotoxy(int x, int y);
@@ -15,9 +17,8 @@ void delay(unsigned int mseconds);
 void set_console_size();
 void Loading();
 
-
-bool adminLogin(string username, string password);
-bool studentLogin(string username, string password);
+bool adminLogin(std::string username, std::string password);
+bool studentLogin(std::string username, std::string password);
 void Heading();
 
 void LoginWindow();
@@ -70,8 +71,12 @@ void LoginWindow();
             // year\semester\courses\course\mark.txt
 
 /*
+currentYear.txt
 year
+    currentSemester.txt
     semester
+        info.txt
+        registration.txt
         classes
             classList.txt
             class1

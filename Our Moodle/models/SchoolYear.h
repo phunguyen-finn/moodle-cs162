@@ -1,12 +1,11 @@
 #ifndef INCLUDE_SCHOOLYEAR_H
 #define INCLUDE_SCHOOLYEAR_H
 
-#include <string>
-#include "../utils/vector.h"
+#include <direct.h>
+#include <fstream>
 using namespace std;
 
-bool isValidYear(string year);
-void setCurrentYear(string year);
+void setCurrentYear(int year);
 int getCurrentYear();
 
 #endif

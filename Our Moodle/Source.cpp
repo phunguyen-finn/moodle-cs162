@@ -3,8 +3,9 @@
 int main() {
 	
 	set_console_size();
-	Loading();
+	// Loading();
 	LoginWindow(); 
+	// staffMenu_classManagement_createClass();
 	
 	return 0;
 }

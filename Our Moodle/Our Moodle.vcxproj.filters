@@ -45,6 +45,9 @@
     <ClInclude Include="models\courseManagementSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="models\commandReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="controllers\class.cpp">
@@ -149,12 +152,15 @@
     <ClCompile Include="interfaces\supportFunctions.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="interfaces\commandReader.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\semester.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
     <None Include="Debug\Our Moodle.exe.recipe" />
-    <None Include="controllers\semester.cpp">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

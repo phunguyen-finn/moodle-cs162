@@ -31,11 +31,10 @@ reenter:
     gotoxy(59, 27); char character;
     while (character = _getch(), character != 13)
         if (character == '\b') {
-            // y = 27, x = 59
             if (password.size() == 0) continue;
             password.pop_back();
-            gotoxy(59 + password.size(), 27); cout << ' ';
-            gotoxy(59 + password.size(), 27);
+            gotoxy(59 + (int)password.size(), 27); cout << ' ';
+            gotoxy(59 + (int)password.size(), 27);
         }
         else {
             password += character;

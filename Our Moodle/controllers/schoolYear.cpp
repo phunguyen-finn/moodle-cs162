@@ -1,15 +1,21 @@
 #include "../models/SchoolYear.h"
 
-int YEAR;
+#include <string>
+using namespace std;
 
-bool isValidYear(string year) {
-    while (year.size() > 1) year.erase(0, 1);
-    for (int c : year) if (c < '0' || '9' < c) return 0;
-    return 1;
-}
-void setCurrentYear(string year) {
-    YEAR = stoi(year);
+void setCurrentYear(int year) {
+    string path = "data/" + to_string(year);
+    _mkdir(path.c_str());
+
+    path = "data/currentYear.txt";
+    ofstream fout(path);
+    fout << year;
+    fout.close();
 }
 int getCurrentYear() {
-    return YEAR;
+    string path = "data/currentYear.txt";
+    ifstream fin(path);
+    int year; fin >> year;
+    fin.close();
+    return year;
 }

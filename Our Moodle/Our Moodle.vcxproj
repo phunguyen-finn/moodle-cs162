@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="models\class.h" />
+    <ClInclude Include="models\commandReader.h" />
     <ClInclude Include="models\course.h" />
     <ClInclude Include="models\courseManagementSystem.h" />
     <ClInclude Include="models\date.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="controllers\schoolYear.cpp" />
     <ClCompile Include="controllers\student.cpp" />
     <ClCompile Include="controllers\user.cpp" />
+    <ClCompile Include="interfaces\commandReader.cpp" />
     <ClCompile Include="interfaces\LoginWindow.cpp" />
     <ClCompile Include="interfaces\staffMenu.cpp" />
     <ClCompile Include="interfaces\staffMenu_classManagement.cpp" />
@@ -186,7 +188,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="controllers\semester.cpp" />
+    <ClCompile Include="controllers\semester.cpp" />
     <None Include="Debug\Our Moodle.exe.recipe" />
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />
   </ItemGroup>
