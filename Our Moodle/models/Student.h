@@ -4,20 +4,27 @@
 #include <string>
 #include "../utils/vector.h"
 #include "Date.h"
-
+#include "semester.h"
+#include <fstream>
+#include <iostream>
+#include <direct.h>
 using namespace std;
 
 struct Student {
-	/* OBJECT */
-	int id;
+	string id;
 	string firstName;
 	string lastName;
-	bool gender; // 0 = female, 1 = male
+	string gender;
 	Date dob; // date of birth
 	string socialId;
-
-	/* LINK */
 	string className;
-	Vector<string> coursesId;
+
+	Student(string id, string firstName, string lastName, string gender, Date dob, string socialId, string className) :
+		id(id), firstName(firstName), lastName(lastName), gender(gender), dob(dob), socialId(socialId), className(className)
+	{};
+	Student() {};
 };
+
+void addStudents(string className);
+void importStudents(string className, Vector<Student> &students);
 #endif

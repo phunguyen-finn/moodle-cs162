@@ -17,8 +17,8 @@ void set_console_size()
     HANDLE hOut;
     SMALL_RECT DisplayArea = { 0, 0, 0, 0 };
     //set x and y to whatever ye' want
-    int x = 125; // 125
-    int y = 55; // 55
+    int x = 120 - 1; // 120
+    int y = 30 - 1; // 30
 
     hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     DisplayArea.Right = x;

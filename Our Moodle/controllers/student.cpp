@@ -1,16 +1,57 @@
 #include "../models/Student.h"
-#include "../utils/vector.h"
 
-Vector<Student> students;
+void addStudents(string className) {
+	Vector<Student> students;
+	importStudents(className, students);
+	int n = students.current;
 
-int findStudentById(int id) {
-	for (int i = 0; i < students.size(); i++)
-		if (students[i].id == id) return i;
-	return -1;
+	string path = "data/classes/" + className + "/studentList.txt";
+	ofstream fout(path);
+	for (int i = 0; i < n; ++i)
+		fout << students[i].id << '\n';
+	fout.close();
+
+	for (int i = 0; i < n; ++i) {
+		path = "data/classes/" + className + "/" + students[i].id + ".txt";
+		fout.open(path);
+		fout << students[i].id << '\n';
+		fout << students[i].firstName << '\n';
+		fout << students[i].lastName << '\n';
+		fout << students[i].gender << '\n';
+		fout << students[i].dob.day << ' ' << students[i].dob.month << ' ' << students[i].dob.year << '\n';
+		fout << students[i].socialId << '\n';
+		fout << students[i].className << '\n';
+		fout.close();
+	}
+
+	Vector<string> studentList;
+	for (int i = 0; i < n; ++i) studentList.push(students[i].id);
+	addStudentToSemester(studentList);
 }
+void importStudents(string className, Vector<Student>& students) {
+	int No;
+	string id;
+	string firstName;
+	string lastName;
+	string gender;
+	Date dob;
+	string socialId;
 
-bool addStudent(Student newStud) {
-	if (findStudentById(newStud.id) != -1) return false;
-	students.push(newStud);
-	return true;
+	string path = "csvFile/classes/" + className + ".csv";
+	ifstream fin(path);
+	string sub; getline(fin, sub);
+	while (fin >> No) {
+		fin.ignore();
+		getline(fin, id, ',');
+		getline(fin, firstName, ',');
+		getline(fin, lastName, ',');
+		getline(fin, gender, ',');
+		fin >> dob.day; fin.ignore(); 
+		fin >> dob.month; fin.ignore();
+		fin >> dob.year; fin.ignore();
+		getline(fin, socialId, '\n');
+
+		students.push(Student(id, firstName, lastName, gender, dob, socialId, className));
+	}
+	fin.close();
 }

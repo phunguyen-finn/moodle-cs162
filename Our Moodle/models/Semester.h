@@ -3,6 +3,8 @@
 
 #include "Date.h"
 #include "schoolYear.h"
+#include "class.h"
+#include "../utils/vector.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -19,5 +21,6 @@ struct Semester {
 void setCurrentSemester(int year, int term, Date start, Date end);
 void setCourseRegistration(Date start, Date end);
 Semester getCurrentSemester();
+void addStudentToSemester(Vector<string> &students);
 
 #endif

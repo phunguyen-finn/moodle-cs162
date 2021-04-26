@@ -163,6 +163,7 @@
     <ClCompile Include="interfaces\staffMenu_classManagement_createClass.cpp" />
     <ClCompile Include="interfaces\staffMenu_classManagement_viewClass.cpp" />
     <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_addStudent.cpp" />
+    <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_menu.cpp" />
     <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewScoreboard.cpp" />
     <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_viewStudent.cpp" />
     <ClCompile Include="interfaces\staffMenu_courseManagement.cpp" />
