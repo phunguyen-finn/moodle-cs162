@@ -27,4 +27,5 @@ struct Student {
 
 void addStudents(string className);
 void importStudents(string className, Vector<Student> &students);
+void getStudents(string className, Vector<Student>& students);
 #endif

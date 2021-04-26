@@ -55,3 +55,29 @@ void importStudents(string className, Vector<Student>& students) {
 	}
 	fin.close();
 }
+void getStudents(string className, Vector<Student>& students) {
+	string id;
+	string firstName;
+	string lastName;
+	string gender;
+	Date dob;
+	string socialId;
+
+	Vector<string> studentList;
+	getStudentList(className, studentList);
+	
+	int n = studentList.current;
+	for (int i = 0; i < n; ++i) {
+		string path = "data/classes/" + className + "/" + studentList[i] + ".txt";
+		ifstream fin(path);
+		getline(fin, id); 
+		getline(fin, firstName);
+		getline(fin, lastName);
+		getline(fin, gender);
+		fin >> dob.day >> dob.month >> dob.year; fin.ignore();
+		getline(fin, socialId);
+		fin.close();
+
+		students.push(Student(id, firstName, lastName, gender, dob, socialId, className));
+	}
+}
