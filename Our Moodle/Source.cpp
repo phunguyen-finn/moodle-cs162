@@ -5,7 +5,7 @@ int main() {
 	set_console_size();
 	// Loading();
 	LoginWindow(); 
-	// staffMenu_classManagement_viewClass();
+	// staffMenu_courseManagement_updateCourse();
 	
 	return 0;
 }

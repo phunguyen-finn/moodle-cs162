@@ -9,5 +9,6 @@ using namespace std;
 bool readInt(int &number);
 bool readDate(Date &date);
 bool read(string& str);
+bool readLine(string& str);
 
 #endif

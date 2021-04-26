@@ -31,3 +31,10 @@ bool read(string& str) {
 	str = input;
 	return 1;
 }
+bool readLine(string& str) {
+	fflush(stdin);
+	string input;
+	getline(cin, input);
+	str = input;
+	return 1;
+}

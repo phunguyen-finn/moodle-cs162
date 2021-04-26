@@ -10,6 +10,7 @@
 #include "semester.h"
 #include "class.h"
 #include "student.h"
+#include "course.h"
 using namespace std;
 
 void gotoxy(int x, int y);

@@ -1,29 +1,35 @@
 #ifndef INCLUDE_COURSE_H
 #define INCLUDE_COURSE_H
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <direct.h>
+#include "semester.h"
 #include "../utils/vector.h"
 
 using namespace std;
-
-const int c_NWeekDay = 6,
-c_MaxCapInit = 50;
 
 struct Course {
 	/* OBJECT */
 	string id;
 	string name;
 	string teacher;
-	int nCredit; // number of credits
-	int *session; // sessions the course is taught during weekdays
-	int maxCapacity; // maximum number of students
-
-	/* LINK */
-	int semesterId;
-	Vector<int> studentsId; // list of students ID
+	int nCredits; 
+	int maxCapacity; 
+	string day1, ses1;
+	string day2, ses2;
 
 	/* CONSTRUCTOR */
-	Course(): maxCapacity(c_MaxCapInit), nCredit(), session(), studentsId(), semesterId() {
-		session = new int[c_NWeekDay];
-	}
+	Course(string id, string name, string teacher, int nCredits, int maxCapacity, string day1, string ses1, string day2, string ses2) :
+		id(id), name(name), teacher(teacher), nCredits(nCredits), maxCapacity(maxCapacity), day1(day1), ses1(ses1), day2(day2), ses2(ses2)
+	{};
+	Course() {};
 };
+
+void addCourse(Course course);
+string codeOfCourse(Course course);
+void getCourses(Vector<Course>& courses);
+void getCourseList(Vector<string>& courseList);
+void removeCouses(Vector<Course>& courses, int No);
+
 #endif
