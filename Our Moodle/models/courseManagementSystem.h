@@ -38,6 +38,7 @@ void LoginWindow();
             void staffMenu_courseManagement_updateCourse();
             void staffMenu_courseManagement_deleteCourse();
             void staffMenu_courseManagement_viewCourse();
+            void staffMenu_courseManagement_viewCourse_menu();
                 void staffMenu_courseManagement_viewCourse_viewStudent();
                 void staffMenu_courseManagement_viewCourse_exportScoreboard();
                 void staffMenu_courseManagement_viewCourse_importScoreboard();

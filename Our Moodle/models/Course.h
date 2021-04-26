@@ -31,5 +31,7 @@ string codeOfCourse(Course course);
 void getCourses(Vector<Course>& courses);
 void getCourseList(Vector<string>& courseList);
 void removeCouses(Vector<Course>& courses, int No);
+void setCurrentCourse(Course course);
+Course getCurrentCourse();
 
 #endif

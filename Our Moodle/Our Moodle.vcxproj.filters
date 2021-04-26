@@ -161,6 +161,9 @@
     <ClCompile Include="interfaces\staffMenu_classManagement_viewClass_menu.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="interfaces\staffMenu_courseManagement_viewCourse_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />

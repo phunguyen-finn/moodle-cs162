@@ -93,3 +93,33 @@ void removeCouses(Vector<Course>& courses, int No) {
 		fout << codeOfCourse(courses[i]) << '\n';
 	fout.close();
 }
+void setCurrentCourse(Course course) {
+	string path = "data/currentCourse.txt";
+	ofstream fout(path);
+	fout << course.id << '\n';
+	fout << course.name << '\n';
+	fout << course.teacher << '\n';
+	fout << course.nCredits << '\n';
+	fout << course.maxCapacity << '\n';
+	fout << course.day1 << ' ' << course.ses1 << '\n';
+	fout << course.day2 << ' ' << course.ses2 << '\n';
+	fout.close();
+}
+Course getCurrentCourse() {
+	string id, name, teacher;
+	int nCredits, maxCapacity;
+	string day1, ses1, day2, ses2;
+
+	string path = "data/currentCourse.txt";
+	ifstream fin(path);
+	getline(fin, id);
+	getline(fin, name);
+	getline(fin, teacher);
+	fin >> nCredits;
+	fin >> maxCapacity;
+	fin >> day1 >> ses1;
+	fin >> day2 >> ses2;
+	fin.close();
+
+	return Course(id, name, teacher, nCredits, maxCapacity, day1, ses1, day2, ses2);
+}
