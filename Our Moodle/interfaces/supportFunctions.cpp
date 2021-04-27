@@ -59,9 +59,3 @@ void Heading()
     cout << "\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM \t\t\n\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }
-bool adminLogin(string username, string password) {
-    return username == "admin" && password == "admin";
-}
-bool studentLogin(string username, string password) {
-    return username == "student" && password == "student";
-}

@@ -41,10 +41,15 @@ reenter:
             cout << "*";
         }
 
-    if (adminLogin(username, password)) staffMenu(); else
-        if (studentLogin(username, password)) studentMenu(); else {
-            cout << "\n\n\t\t\t\t\t\t"; cout << "Unsuccessful login attemp";
-            delay(1500);
-        }
+    User account = login(username, password);
+    if (account.role == "NONE") {
+        cout << "\n\n\t\t\t\t\t\tUnsuccessful login attemp";
+        delay(1500);
+    }
+    else {
+        setCurrentAccount(account);
+        if (account.role == "staff") staffMenu(); else studentMenu();
+    }
+
     goto reenter;
 }

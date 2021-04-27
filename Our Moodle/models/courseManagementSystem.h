@@ -11,16 +11,13 @@
 #include "class.h"
 #include "student.h"
 #include "course.h"
+#include "user.h"
 using namespace std;
 
 void gotoxy(int x, int y);
 void delay(unsigned int mseconds);
-
 void set_console_size();
 void Loading();
-
-bool adminLogin(std::string username, std::string password);
-bool studentLogin(std::string username, std::string password);
 void Heading();
 
 void LoginWindow(); 

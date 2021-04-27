@@ -5,6 +5,7 @@
 #include "../utils/vector.h"
 #include "Date.h"
 #include "semester.h"
+#include "user.h"
 #include <fstream>
 #include <iostream>
 #include <direct.h>
@@ -28,4 +29,5 @@ struct Student {
 void addStudents(string className);
 void importStudents(string className, Vector<Student> &students);
 void getStudents(string className, Vector<Student>& students);
+void getStudents(Vector<string>& studentList, Vector<string>& classList, Vector<Student>& students);
 #endif

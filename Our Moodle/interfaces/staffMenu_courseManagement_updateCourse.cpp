@@ -1,8 +1,10 @@
 #include "../models/courseManagementSystem.h"
 
 void staffMenu_courseManagement_updateCourse() {
+    Vector<string> courseList;
+    getCourseList(courseList);
     Vector<Course> courses;
-    getCourses(courses);
+    getCourses(courseList, courses);
     int n = courses.current;
     
 reenter:
@@ -39,9 +41,9 @@ reenter:
     cout << "\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
 
-    cout << "\n\t\t\t\tChoose course number(choose 0 to return): ";
+    cout << "\n\t\t\t\t\tChoose course number(choose 0 to return): ";
     int No; if (!readInt(No) || No < 0 || n < No) {
-        cout << "\n\t\t\t\t\t\tInvalid choice";
+        cout << "\n\t\t\t\t\t\t     Invalid choice";
         delay(1500);
     }
     else {

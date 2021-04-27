@@ -1,8 +1,10 @@
 #include "../models/courseManagementSystem.h"
 
 void staffMenu_courseManagement_viewCourse() {
+    Vector<string> courseList;
+    getCourseList(courseList);
     Vector<Course> courses;
-    getCourses(courses);
+    getCourses(courseList, courses);
     int n = courses.current;
 
 reenter:

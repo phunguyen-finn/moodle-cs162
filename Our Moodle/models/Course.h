@@ -6,6 +6,7 @@
 #include <direct.h>
 #include "semester.h"
 #include "../utils/vector.h"
+#include "user.h"
 
 using namespace std;
 
@@ -28,10 +29,16 @@ struct Course {
 
 void addCourse(Course course);
 string codeOfCourse(Course course);
-void getCourses(Vector<Course>& courses);
+void getCourses(Vector<string>& courseList, Vector<Course>& courses);
 void getCourseList(Vector<string>& courseList);
 void removeCouses(Vector<Course>& courses, int No);
 void setCurrentCourse(Course course);
 Course getCurrentCourse();
+void studentAddCourse(Course course);
+void studentRemoveCourse(Course course);
+bool isAbleToAdd(Course course);
+void getStudentCourseList(Vector<string>& courseList);
+void getStudentCourseList(string student, Vector<string>& courseList);
+void getCourseStudentList(Course course, Vector<string>& studentList, Vector<string>& classList);
 
 #endif

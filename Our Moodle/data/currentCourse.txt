@@ -1,7 +1,0 @@
-CS162
-Introduction to Computer Science II
-Dinh Ba Tien
-50
-100
-MON S1
-TUE S2

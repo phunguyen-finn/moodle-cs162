@@ -18,13 +18,13 @@ void getClasses(Vector<string> &Classes) {
 	fin.close();
 }
 void setCurrentClass(string className) {
-	string path = "data/currentClass.txt";
+	string path = "data/cache/currentClass.txt";
 	ofstream fout(path);
 	fout << className;
 	fout.close();
 }
 string getCurrentClass() {
-	string path = "data/currentClass.txt";
+	string path = "data/cache/currentClass.txt";
 	ifstream fin(path);
 	string name; fin >> name;
 	fin.close(); return name;

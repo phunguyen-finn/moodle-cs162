@@ -20,7 +20,7 @@ void setCurrentSemester(int year, int term, Date start, Date end) {
 	path = "csvFile/" + to_string(year) + '/' + to_string(term);
 	_mkdir(path.c_str());
 	
-	path = "data/currentSemester.txt";
+	path = "data/cache/currentSemester.txt";
 	ofstream fout(path); 
 	fout << year << '\n';
 	fout << term << '\n';
@@ -42,7 +42,7 @@ Semester getCurrentSemester() {
 	int startday, startmonth, startyear;
 	int endday, endmonth, endyear;
 	
-	string path = "data/currentSemester.txt";
+	string path = "data/cache/currentSemester.txt";
 	ifstream fin(path);
 	fin >> year;
 	fin >> term;
