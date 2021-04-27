@@ -7,6 +7,8 @@
 #include "semester.h"
 #include "../utils/vector.h"
 #include "user.h"
+#include "student.h"
+#include "mark.h"
 
 using namespace std;
 
@@ -40,5 +42,11 @@ bool isAbleToAdd(Course course);
 void getStudentCourseList(Vector<string>& courseList);
 void getStudentCourseList(string student, Vector<string>& courseList);
 void getCourseStudentList(Course course, Vector<string>& studentList, Vector<string>& classList);
+void exportCourse(Semester semester, Course course);
+void importCourse(Semester semester, Course course);
+void addStudentMark(string student, string course, Mark mark);
+void updateCourseMark(string course, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
+void getCourseScoreboard(Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
+void getStudentScoreboard(Vector<string>& courses, Vector<string>& names, Vector<Mark>& marks);
 
 #endif

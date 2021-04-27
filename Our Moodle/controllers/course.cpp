@@ -244,3 +244,138 @@ void getStudentCourseList(string student, Vector<string>& courseList) {
 	while (fin >> dir) courseList.push(dir);
 	fin.close();
 }
+void exportCourse(Semester semester, Course course) {
+	int year = semester.year;
+	int term = semester.term;
+	string courseCode = codeOfCourse(course);
+
+	Vector<string> studentList, classList;
+	getCourseStudentList(course, studentList, classList);
+	Vector<Student> students;
+	getStudents(studentList, classList, students);
+	int n = students.current;
+
+	string path = "csvFile/" + to_string(year) + "/" + to_string(term) + "/" + courseCode + ".csv";
+	ofstream fout(path);
+	fout << "No,Student ID,Full name,Total mark,Final mark,Midterm mark,Other mark\n";
+	for (int i = 0; i < n; ++i) {
+		fout << i + 1 << ',';
+		fout << students[i].id << ',';
+		fout << students[i].lastName << ' ' << students[i].firstName << ',';
+		fout << ','; // total mark,
+		fout << ','; // final mark,
+		fout << ','; // midterm mark,
+		fout << '\n'; // other mark
+	}
+	fout.close();
+}
+void importCourse(Semester semester, Course course) {
+	int year = semester.year;
+	int term = semester.term;
+	string courseCode = codeOfCourse(course);
+
+	Vector<string> students, names;
+	Vector<Mark> marks;
+	int No;
+	float totalMark, finalMark, midtermMark, otherMark;
+	string id, fullName;
+
+	string path = "csvFile/" + to_string(year) + "/" + to_string(term) + "/" + courseCode + ".csv";
+	ifstream fin(path);
+	string line; getline(fin, line);
+	while (fin >> No) {
+		fin.ignore();
+		getline(fin, id, ',');
+		getline(fin, fullName, ',');
+		fin >> totalMark; fin.ignore();
+		fin >> finalMark; fin.ignore();
+		fin >> midtermMark; fin.ignore();
+		fin >> otherMark;
+
+		students.push(id);
+		names.push(fullName);
+		marks.push(Mark(totalMark, finalMark, midtermMark, otherMark));
+	}
+	fin.close();
+
+	int n = students.current;
+	for (int i = 0; i < n; ++i) 
+		addStudentMark(students[i], courseCode, marks[i]);
+	updateCourseMark(courseCode, students, names, marks);
+}
+void addStudentMark(string student, string course, Mark mark) {
+	Semester semester = getCurrentSemester();
+	int year = semester.year;
+	int term = semester.term;
+
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/marks.txt";
+	ofstream fout;
+	fout.open(path, ofstream::out | ofstream::app);
+	fout.precision(2);
+	fout << course << ' ' << fixed << mark.totalMark << ' ' << mark.finalMark << ' ' << mark.midtermMark << ' ' << mark.otherMark << '\n';
+	fout.close();
+}
+void updateCourseMark(string course, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks) {
+	Semester semester = getCurrentSemester();
+	int year = semester.year;
+	int term = semester.term;
+
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + course + "/marks.txt";
+	ofstream fout(path);
+	fout.precision(2);
+	int n = students.current;
+	for (int i = 0; i < n; ++i) {
+		fout << students[i] << ' ' << fixed << marks[i].totalMark << ' ' << marks[i].finalMark << ' ' << marks[i].midtermMark << ' ' << marks[i].otherMark << ' ' << names[i] << '\n';
+	}
+	fout.close();
+}
+void getCourseScoreboard(Vector<string>& students, Vector<string>& names, Vector<Mark>& marks) {
+	Course course = getCurrentCourse();
+	string courseCode = codeOfCourse(course);
+
+	Semester semester = getCurrentSemester();
+	int year = semester.year;
+	int term = semester.term;
+
+	string student, name; Mark mark;
+
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + courseCode + "/marks.txt";
+	ifstream fin(path);
+	while (fin >> student >> mark.totalMark >> mark.finalMark >> mark.midtermMark >> mark.otherMark) {
+		fin.ignore();
+		getline(fin, name);
+		students.push(student);
+		names.push(name);
+		marks.push(mark);
+	}
+	fin.close();
+}
+void getStudentScoreboard(Vector<string>& courses, Vector<string>& names, Vector<Mark>& marks) {
+	User account;
+	getCurrentAccount(account);
+	string student = account.username;
+
+	Semester semester = getCurrentSemester();
+	int year = semester.year;
+	int term = semester.term;
+
+	Vector<string> courseList;
+	string courseCode;
+	Mark mark;
+
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/marks.txt";
+	ifstream fin(path);
+	while (fin >> courseCode >> mark.totalMark >> mark.finalMark >> mark.midtermMark >> mark.otherMark) {
+		courseList.push(courseCode);
+		marks.push(mark);
+	}
+	fin.close();
+
+	Vector<Course> Courses;
+	getCourses(courseList, Courses);
+	int n = Courses.current;
+	for (int i = 0; i < n; ++i) {
+		courses.push(Courses[i].id);
+		names.push(Courses[i].name);
+	}
+}

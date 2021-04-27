@@ -48,6 +48,9 @@
     <ClInclude Include="models\commandReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="models\mark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="controllers\class.cpp">

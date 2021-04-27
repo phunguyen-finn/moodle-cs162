@@ -1,7 +1,15 @@
 #include "../models/semester.h"
 
 void setCurrentSemester(int year, int term, Date start, Date end) {
-	string path = "data/" + to_string(year)	+ '/' + to_string(term);
+	string path = "data/cache/currentSemester.txt";
+	ofstream fout(path);
+	fout << year << '\n';
+	fout << term << '\n';
+	fout << start.day << ' ' << start.month << ' ' << start.year << '\n';
+	fout << end.day << ' ' << end.month << ' ' << end.year << '\n';
+	fout.close();
+
+	path = "data/" + to_string(year)	+ '/' + to_string(term);
 	_mkdir(path.c_str());
 	path = "data/" + to_string(year) + '/' + to_string(term) + "/courses";
 	_mkdir(path.c_str());
@@ -20,14 +28,6 @@ void setCurrentSemester(int year, int term, Date start, Date end) {
 	path = "csvFile/" + to_string(year) + '/' + to_string(term);
 	_mkdir(path.c_str());
 	
-	path = "data/cache/currentSemester.txt";
-	ofstream fout(path); 
-	fout << year << '\n';
-	fout << term << '\n';
-	fout << start.day << ' ' << start.month << ' ' << start.year << '\n';
-	fout << end.day << ' ' << end.month << ' ' << end.year << '\n';
-	fout.close();
-
 	path = "data/" + to_string(year) + '/' + to_string(term) + "/info.txt";
 	fout.open(path);
 	fout << year << '\n';
