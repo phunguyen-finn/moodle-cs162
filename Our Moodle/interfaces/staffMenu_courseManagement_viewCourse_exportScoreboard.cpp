@@ -20,7 +20,21 @@ reenter:
         string confirm; gotoxy(67, 14); read(confirm);
         if (confirm == "back") return; else
             if (confirm == "commit") {
-                exportCourse(semester, course);
+                Vector<string> studentList, classList; 
+                getCourseStudentList(year, term, course, studentList, classList);
+
+                Vector<Student> students;
+                getStudents(studentList, classList, students);
+
+                Vector<string> ids, fullnames;
+                int n = students.current;
+                for (int i = 0; i < n; ++i) {
+                    ids.push(students[i].id);
+                    fullnames.push(students[i].lastName + students[i].firstName);
+                }
+
+                exportCourse(year, term, codeOfCourse(course), ids, fullnames);
+
                 cout << "\n\t\t\t\t\tCourse has been exported successfully";
                 delay(1500); return;
             }

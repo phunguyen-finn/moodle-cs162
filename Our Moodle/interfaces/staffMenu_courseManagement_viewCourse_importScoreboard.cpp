@@ -21,8 +21,19 @@ reenter:
         string confirm; gotoxy(67, 16); read(confirm);
         if (confirm == "back") return; else
             if (confirm == "commit") {
-                importCourse(semester, course);
-                cout << "\n\t\t\t\t\tCourse has been exported successfully";
+                Vector<string> ids, fullnames;
+                Vector<Mark> marks;
+                importCourse(year, term, codeOfCourse(course), ids, fullnames, marks);
+
+                updateCourseMark(year, term, codeOfCourse(course), ids, fullnames, marks);
+                int n = marks.current;
+                for (int i = 0; i < n; ++i) addStudentMark(year, term, ids[i], codeOfCourse(course), marks[i]);
+
+                Vector<string> studentList, classList;
+                getCourseStudentList(year, term, course, studentList, classList);
+                for (int i = 0; i < n; ++i) addStudentMark(studentList[i], classList[i], marks[i].totalMark);
+
+                cout << "\n\t\t\t\t\tCourse has been imported successfully";
                 delay(1500); return;
             }
         gotoxy(67, 16); for (char c : confirm) cout << ' ';

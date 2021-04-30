@@ -48,7 +48,7 @@ reenter:
     }
     else {
         if (No == 0) return;
-        removeCouses(courses, No - 1);
+        removeCourse(courses, No - 1);
         staffMenu_courseManagement_addCourse();
         return;
     }

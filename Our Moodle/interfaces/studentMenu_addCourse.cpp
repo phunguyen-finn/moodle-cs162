@@ -48,8 +48,20 @@ reenter:
     }
     else {
         if (No == 0) return;
-        if (isAbleToAdd(courses[No - 1])) {
-            studentAddCourse(courses[No - 1]);
+
+        Semester semester = getCurrentSemester();
+        int year = semester.year;
+        int term = semester.term;
+        User account; 
+        getCurrentAccount(account);
+        Vector<string> studentCourseList;
+        getStudentCourseList(year, term, account.username, studentCourseList);
+        Vector<Course> studentCourses; 
+        getCourses(studentCourseList, studentCourses);
+
+        if (isAbleToAdd(courses[No - 1], studentCourses)) {
+            studentAddCourse(year, term, account.username, account.Class, codeOfCourse(courses[No - 1]));
+
             cout << "\n\t\t\t\t\t     Course has been added successfully";
             delay(1500);
         }

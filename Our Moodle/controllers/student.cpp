@@ -1,109 +1,96 @@
 #include "../models/Student.h"
 
-void addStudents(string className) {
-	Vector<Student> students;
-	importStudents(className, students);
-	int n = students.current;
-
-	string path = "data/classes/" + className + "/studentList.txt";
-	ofstream fout(path);
-	for (int i = 0; i < n; ++i)
-		fout << students[i].id << '\n';
+void studentAddCourse(int year, int term, string student, string Class, string course) {ofstream fout;
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/courses.txt";
+	fout.open(path, ofstream::out | ofstream::app);
+	fout << course << '\n';
 	fout.close();
 
-	for (int i = 0; i < n; ++i) {
-		path = "data/classes/" + className + "/" + students[i].id + ".txt";
-		fout.open(path);
-		fout << students[i].id << '\n';
-		fout << students[i].firstName << '\n';
-		fout << students[i].lastName << '\n';
-		fout << students[i].gender << '\n';
-		fout << students[i].dob.day << ' ' << students[i].dob.month << ' ' << students[i].dob.year << '\n';
-		fout << students[i].socialId << '\n';
-		fout << students[i].className << '\n';
-		fout.close();
-	}
-
-	Vector<string> studentList;
-	for (int i = 0; i < n; ++i) studentList.push(students[i].id);
-	addStudentToSemester(studentList);
-
-	for (int i = 0; i < n; ++i)
-		addAccount(User(students[i].id, students[i].socialId, "student", className));
+	path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + course + "/students.txt";
+	fout.open(path, ofstream::out | ofstream::app);
+	fout << student << ' ' << Class << '\n';
+	fout.close();
 }
-void importStudents(string className, Vector<Student>& students) {
-	int No;
-	string id;
-	string firstName;
-	string lastName;
-	string gender;
-	Date dob;
-	string socialId;
+void studentRemoveCourse(int year, int term, string student, string course, Vector<string>& courseList, Vector<string>& studentList, Vector<string>& classList) {
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/courses.txt";
+	ofstream fout(path);
+	int n = courseList.current;
+	for (int i = 0; i < n; ++i)
+		if (courseList[i] != course)
+			fout << courseList[i] << '\n';
+	fout.close();
 
-	string path = "csvFile/classes/" + className + ".csv";
+	path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + course + "/students.txt";
+	fout.open(path);
+	n = studentList.current;
+	for (int i = 0; i < n; ++i)
+		if (studentList[i] != student)
+			fout << studentList[i] << ' ' << classList[i] << '\n';
+	fout.close();
+}
+void getStudentCourseList(int year, int term, string student, Vector<string>& courseList) {
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/courses.txt";
 	ifstream fin(path);
-	string sub; getline(fin, sub);
-	while (fin >> No) {
-		fin.ignore();
-		getline(fin, id, ',');
-		getline(fin, firstName, ',');
-		getline(fin, lastName, ',');
-		getline(fin, gender, ',');
-		fin >> dob.day; fin.ignore(); 
-		fin >> dob.month; fin.ignore();
-		fin >> dob.year; fin.ignore();
-		getline(fin, socialId, '\n');
+	string dir;
+	while (fin >> dir) courseList.push(dir);
+	fin.close();
+}
+void addStudentMark(int year, int term, string student, string course, Mark mark) {
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/marks.txt";
 
-		students.push(Student(id, firstName, lastName, gender, dob, socialId, className));
+	Vector<string> courses; Vector<Mark> marks;
+	string courseTmp; Mark markTmp;
+
+	ifstream fin(path);
+	courses.push(course);
+	marks.push(mark);
+	while (fin >> courseTmp >> markTmp.totalMark >> markTmp.finalMark >> markTmp.midtermMark >> markTmp.otherMark) 
+		if (courseTmp != course) {
+			courses.push(courseTmp); 
+			marks.push(markTmp);
+		}
+	fin.close();
+	
+	ofstream fout(path);
+	fout.precision(2);
+	int n = marks.current;
+	for (int i = 0; i < n; ++i) {
+		fout << courses[i] << ' ';
+		fout << fixed << marks[i].totalMark << ' ';
+		fout << fixed << marks[i].finalMark << ' ';
+		fout << fixed << marks[i].midtermMark << ' ';
+		fout << fixed << marks[i].otherMark << '\n';
+	}
+	fout.close();
+}
+void getStudentScoreboard(int year, int term, string student, Vector<string>& courseList, Vector<Mark>& marks) {
+	string courseCode; Mark mark;
+
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/students/" + student + "/marks.txt";
+	ifstream fin(path);
+	while (fin >> courseCode >> mark.totalMark >> mark.finalMark >> mark.midtermMark >> mark.otherMark) {
+		courseList.push(courseCode);
+		marks.push(mark);
 	}
 	fin.close();
 }
-void getStudents(string className, Vector<Student>& students) {
-	string id;
-	string firstName;
-	string lastName;
-	string gender;
-	Date dob;
-	string socialId;
-
-	Vector<string> studentList;
-	getStudentList(className, studentList);
-	
-	int n = studentList.current;
-	for (int i = 0; i < n; ++i) {
-		string path = "data/classes/" + className + "/" + studentList[i] + ".txt";
-		ifstream fin(path);
-		getline(fin, id); 
-		getline(fin, firstName);
-		getline(fin, lastName);
-		getline(fin, gender);
-		fin >> dob.day >> dob.month >> dob.year; fin.ignore();
-		getline(fin, socialId);
-		fin.close();
-
-		students.push(Student(id, firstName, lastName, gender, dob, socialId, className));
+float getStudentGPA(string student, string Class) {
+	string path = "data/classes/" + Class + "/" + student + "_marks.txt";
+	ifstream fin(path);
+	float mark, sum = 0;
+	int cnt = 0;
+	while (fin >> mark) {
+		sum += mark;
+		cnt += 1;
 	}
+	fin.close();
+	float GPA = cnt > 0 ? sum / cnt : 0;
+	return GPA / 10 * 4;
 }
-void getStudents(Vector<string>& studentList, Vector<string>& classList, Vector<Student>& students) {
-	string id;
-	string firstName;
-	string lastName;
-	string gender;
-	Date dob;
-	string socialId;
-
-	int n = studentList.current;
-	for (int i = 0; i < n; ++i) {
-		string path = "data/classes/" + classList[i] + "/" + studentList[i] + ".txt";
-		ifstream fin(path);
-		getline(fin, id);
-		getline(fin, firstName);
-		getline(fin, lastName);
-		getline(fin, gender);
-		fin >> dob.day >> dob.month >> dob.year; fin.ignore();
-		getline(fin, socialId);
-		fin.close();
-
-		students.push(Student(id, firstName, lastName, gender, dob, socialId, classList[i]));
-	}
+void addStudentMark(string student, string Class, float mark) {
+	string path = "data/classes/" + Class + "/" + student + "_marks.txt";
+	ofstream fout;
+	fout.open(path, std::ofstream::out | std::ofstream::app);
+	fout << mark << '\n';
+	fout.close();
 }

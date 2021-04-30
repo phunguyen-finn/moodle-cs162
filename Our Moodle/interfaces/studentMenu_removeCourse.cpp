@@ -2,8 +2,14 @@
 
 void studentMenu_removeCourse() {
 reenter:
+    Semester semester = getCurrentSemester();
+    int year = semester.year;
+    int term = semester.term;
+    User account;
+    getCurrentAccount(account);
+
     Vector<string> courseList;
-    getStudentCourseList(courseList);
+    getStudentCourseList(year, term, account.username, courseList);
     Vector<Course> courses;
     getCourses(courseList, courses);
     int n = courses.current;
@@ -48,10 +54,12 @@ reenter:
     }
     else {
         if (No == 0) return;
-        studentRemoveCourse(courses[No - 1]);
+        Vector<string> studentList, classList;
+        getCourseStudentList(year, term, courses[No - 1], studentList, classList);
+        studentRemoveCourse(year, term, account.username, codeOfCourse(courses[No - 1]), courseList, studentList, classList);
+
         cout << "\n\t\t\t\t\t   Course has been deleted successfully";
         delay(1500);
-        return;
     }
 
     goto reenter;

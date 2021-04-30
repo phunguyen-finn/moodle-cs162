@@ -1,10 +1,14 @@
 #include "../models/courseManagementSystem.h"
 
 void staffMenu_courseManagement_viewCourse_viewStudent() {
+    Semester semester = getCurrentSemester();
+    int year = semester.year;
+    int term = semester.term;
+
     Course course = getCurrentCourse();
     Vector<string> studentList, classList;
     Vector<Student> students;
-    getCourseStudentList(course, studentList, classList);
+    getCourseStudentList(year, term, course, studentList, classList);
     getStudents(studentList, classList, students);
     int n = students.current;
 

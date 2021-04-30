@@ -1,13 +1,13 @@
 #include "../models/courseManagementSystem.h"
 
 void staffMenu_courseManagement_deleteCourse() {
+reenter:
     Vector<string> courseList;
     getCourseList(courseList);
     Vector<Course> courses;
     getCourses(courseList, courses);
     int n = courses.current;
 
-reenter:
     system("CLS"); Heading();
     cout << "\n\n\t\t\t\t\t       ";
     for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " REMOVE A COURSE "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
@@ -48,7 +48,7 @@ reenter:
     }
     else {
         if (No == 0) return;
-        removeCouses(courses, No - 1);
+        removeCourse(courses, No - 1);
         cout << "\n\t\t\t\t\t    Course has been removed successfully";
         delay(1500);
         return;

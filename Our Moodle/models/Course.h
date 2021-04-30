@@ -1,15 +1,13 @@
 #ifndef INCLUDE_COURSE_H
 #define INCLUDE_COURSE_H
+
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <direct.h>
-#include "semester.h"
-#include "../utils/vector.h"
-#include "user.h"
-#include "student.h"
-#include "mark.h"
 
+#include "mark.h"
+#include "../utils/vector.h"
 using namespace std;
 
 struct Course {
@@ -29,24 +27,16 @@ struct Course {
 	Course() {};
 };
 
-void addCourse(Course course);
 string codeOfCourse(Course course);
-void getCourses(Vector<string>& courseList, Vector<Course>& courses);
-void getCourseList(Vector<string>& courseList);
-void removeCouses(Vector<Course>& courses, int No);
 void setCurrentCourse(Course course);
 Course getCurrentCourse();
-void studentAddCourse(Course course);
-void studentRemoveCourse(Course course);
-bool isAbleToAdd(Course course);
-void getStudentCourseList(Vector<string>& courseList);
-void getStudentCourseList(string student, Vector<string>& courseList);
-void getCourseStudentList(Course course, Vector<string>& studentList, Vector<string>& classList);
-void exportCourse(Semester semester, Course course);
-void importCourse(Semester semester, Course course);
-void addStudentMark(string student, string course, Mark mark);
-void updateCourseMark(string course, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
-void getCourseScoreboard(Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
-void getStudentScoreboard(Vector<string>& courses, Vector<string>& names, Vector<Mark>& marks);
 
+void getCourseStudentList(int year, int term, Course course, Vector<string>& studentList, Vector<string>& classList);
+void exportCourse(int year, int term, string course, Vector<string>& id, Vector<string>& fullname);
+void importCourse(int year, int term, string course, Vector<string>& ids, Vector<string>& fullnames, Vector<Mark>& marks);
+
+void updateCourseMark(int year, int term, string course, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
+void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
+
+bool isAbleToAdd(Course course, Vector<Course>& courses);
 #endif

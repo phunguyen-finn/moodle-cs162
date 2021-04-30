@@ -17,7 +17,10 @@ reenter:
         string confirm; gotoxy(69, 16); read(confirm);
         if (confirm == "back") return; else
             if (confirm == "commit") {
-                addStudents(className);
+                Vector<string> studentList;
+                addStudents(className, studentList);
+                addStudentToSemester(studentList);
+
                 cout << "\n\t\t\t\t\tStudents have been added successfully";
                 delay(1500); return;
             }

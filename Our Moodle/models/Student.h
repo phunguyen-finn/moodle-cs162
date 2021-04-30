@@ -2,13 +2,14 @@
 #define INCLUDE_STUDENT_H
 
 #include <string>
-#include "../utils/vector.h"
-#include "Date.h"
-#include "semester.h"
-#include "user.h"
 #include <fstream>
 #include <iostream>
 #include <direct.h>
+
+#include "../utils/vector.h"
+#include "Date.h"
+#include "user.h"
+#include "mark.h"
 using namespace std;
 
 struct Student {
@@ -26,8 +27,13 @@ struct Student {
 	Student() {};
 };
 
-void addStudents(string className);
-void importStudents(string className, Vector<Student> &students);
-void getStudents(string className, Vector<Student>& students);
-void getStudents(Vector<string>& studentList, Vector<string>& classList, Vector<Student>& students);
+void studentAddCourse(int year, int term, string student, string Class, string course);
+void studentRemoveCourse(int year, int term, string student, string course, Vector<string>& courseList, Vector<string>& studentList, Vector<string>& classList);
+
+void getStudentCourseList(int year, int term, string student, Vector<string>& courseList);
+
+void addStudentMark(int year, int term, string student, string course, Mark mark);
+void addStudentMark(string student, string Class, float mark);
+void getStudentScoreboard(int year, int term, string student, Vector<string>& courseList, Vector<Mark>& marks);
+float getStudentGPA(string student, string Class);
 #endif

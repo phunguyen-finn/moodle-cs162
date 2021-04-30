@@ -1,9 +1,12 @@
 #include "../models/courseManagementSystem.h"
 
 void staffMenu_courseManagement_viewCourse_viewScoreboard() {
-    Vector<string> id, names;
-    Vector<Mark> marks;
-    getCourseScoreboard(id, names, marks);
+    Semester semester = getCurrentSemester();
+    int year = semester.year;
+    int term = semester.term;
+
+    Vector<string> id, names; Vector<Mark> marks;
+    getCourseScoreboard(year, term, id, names, marks);
     int n = marks.current;
 
 reenter:

@@ -22,6 +22,16 @@ reenter:
         if (confirm == "back") return; else
             if (confirm == "commit") {
                 setCurrentSemester(getCurrentYear(), semester, start, end);
+
+                Vector<string> classList;
+                getClasses(classList);
+                int n = classList.current;
+                for (int i = 0; i < n; ++i) {
+                    Vector<string> studentList;
+                    getStudentList(classList[i], studentList);
+                    addStudentToSemester(studentList);
+                }
+
                 cout << "\n\t\t\t\t\t   Semester has been created successfully";
                 delay(1500); return;
             }

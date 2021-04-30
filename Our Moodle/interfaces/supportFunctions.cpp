@@ -54,8 +54,17 @@ void Loading(void)
 }
 void Heading()
 {
+    Semester semester = getCurrentSemester();
+    int year = semester.year;
+    int term = semester.term;
+
     cout << "\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
-    cout << "\n\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM \t\t\n\n\n";
+    cout << "\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM";
+    cout << "\n\t\t\t\t\t\t   Year: " << year << " - " << year + 1;
+    cout << "\n\t\t\t\t\t\t   Semester " << term;
+    if (term == 1) cout << "(Fall)\n\n"; else
+        if (term == 2) cout << "(Summer)\n\n"; else
+            if (term == 3) cout << "(Autumn)\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }
