@@ -182,6 +182,7 @@
     <ClCompile Include="interfaces\staffMenu_createSemester.cpp" />
     <ClCompile Include="interfaces\staffMenu_studentManagement.cpp" />
     <ClCompile Include="interfaces\staffMenu_studentManagement_updateStudentResult.cpp" />
+    <ClCompile Include="interfaces\staffMenu_studentManagement_updateStudentResult_viewCourse.cpp" />
     <ClCompile Include="interfaces\studentMenu.cpp" />
     <ClCompile Include="interfaces\studentMenu_addCourse.cpp" />
     <ClCompile Include="interfaces\studentMenu_removeCourse.cpp" />

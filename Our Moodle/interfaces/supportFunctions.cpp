@@ -66,5 +66,6 @@ void Heading()
     if (term == 1) cout << "(Fall)\n\n"; else
         if (term == 2) cout << "(Summer)\n\n"; else
             if (term == 3) cout << "(Autumn)\n\n";
+            else cout << "(NULL)\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }

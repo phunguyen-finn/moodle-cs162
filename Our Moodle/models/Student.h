@@ -34,6 +34,7 @@ void getStudentCourseList(int year, int term, string student, Vector<string>& co
 
 void addStudentMark(int year, int term, string student, string course, Mark mark);
 void addStudentMark(string student, string Class, float mark);
+void updateStudentMark(string student, string Class, float mark, float markNew);
 void getStudentScoreboard(int year, int term, string student, Vector<string>& courseList, Vector<Mark>& marks);
 float getStudentGPA(string student, string Class);
 #endif

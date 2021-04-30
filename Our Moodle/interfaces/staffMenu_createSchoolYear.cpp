@@ -17,6 +17,8 @@ reenter:
         if (confirm == "back") return; else
             if (confirm == "commit") {
                 setCurrentYear(year);
+                setCurrentSemester(year, 0, Date(0, 0, 0), Date(0, 0, 0));
+
                 cout << "\n\t\t\t\t\t    Year has been created successfully";
                 delay(1500); return;
             }

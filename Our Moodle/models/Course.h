@@ -36,7 +36,8 @@ void exportCourse(int year, int term, string course, Vector<string>& id, Vector<
 void importCourse(int year, int term, string course, Vector<string>& ids, Vector<string>& fullnames, Vector<Mark>& marks);
 
 void updateCourseMark(int year, int term, string course, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
-void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks);
+void updateCourseMark(int year, int term, string course, string student, Mark mark);
+void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks, string course = codeOfCourse(getCurrentCourse()));
 
 bool isAbleToAdd(Course course, Vector<Course>& courses);
 #endif

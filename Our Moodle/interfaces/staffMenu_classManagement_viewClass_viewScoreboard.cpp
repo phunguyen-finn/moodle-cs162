@@ -37,8 +37,8 @@ reenter:
                 cnt += 1;
             }
             else {
-                gotoxy(47 + j * 8, 14 + i * 3); cout << "NONE";
-                gotoxy(47 + j * 8, 15 + i * 3); cout << "NONE";
+                gotoxy(47 + j * 8, 14 + i * 3); cout << "----";
+                gotoxy(47 + j * 8, 15 + i * 3); cout << "----";
             }
         float GPA = cnt > 0 ? sum / cnt : 0;
 

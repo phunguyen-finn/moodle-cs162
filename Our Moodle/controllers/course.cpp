@@ -101,13 +101,19 @@ void updateCourseMark(int year, int term, string course, Vector<string>& student
 	}
 	fout.close();
 }
-void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks) {
-	Course course = getCurrentCourse();
-	string courseCode = codeOfCourse(course);
+void updateCourseMark(int year, int term, string course, string student, Mark mark) {
+	Vector<string> students, names;
+	Vector<Mark> marks;
+	getCourseScoreboard(year, term, students, names, marks, course);
 
+	int n = marks.current;
+	for (int i = 0; i < n; ++i) if (student == students[i]) marks[i] = mark;
+	updateCourseMark(year, term, course, students, names, marks);
+}
+void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks, string course) {
 	string student, name; Mark mark;
 
-	string path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + courseCode + "/marks.txt";
+	string path = "data/" + to_string(year) + "/" + to_string(term) + "/courses/" + course + "/marks.txt";
 	ifstream fin(path);
 	while (fin >> student >> mark.totalMark >> mark.finalMark >> mark.midtermMark >> mark.otherMark) {
 		fin.ignore();

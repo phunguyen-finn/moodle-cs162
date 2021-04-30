@@ -8,6 +8,17 @@ bool readInt(int& number) {
 	number = stoi(input);
 	return 1;
 }
+bool readFloat(float& number) {
+	fflush(stdin);
+	string input; cin >> input;
+	bool dot = 1;
+	for (char c : input)
+		if (c == '.' && dot) dot = 0; else  
+			if (c < '0' || '9' < c) return 0;
+	number = stof(input);
+	return 1;
+}
+
 bool readDate(Date& date) {
 	// dd/mm/yyyy
 	fflush(stdin);

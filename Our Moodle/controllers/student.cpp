@@ -94,3 +94,22 @@ void addStudentMark(string student, string Class, float mark) {
 	fout << mark << '\n';
 	fout.close();
 }
+void updateStudentMark(string student, string Class, float mark, float markNew) {
+	Vector<float> marks;
+
+	string path = "data/classes/" + Class + "/" + student + "_marks.txt";
+	ifstream fin(path);
+	float markTmp;
+	while (fin >> markTmp) marks.push(markTmp);
+	fin.close();
+
+	int n = marks.current;
+	for (int i = 0; i < n; ++i) if (marks[i] == mark) {
+		marks[i] = markNew; 
+		break;
+	}
+
+	ofstream fout(path);
+	for (int i = 0; i < n; ++i) fout << marks[i] << '\n';
+	fout.close();
+}

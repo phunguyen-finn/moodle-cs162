@@ -49,6 +49,7 @@ void LoginWindow();
                 void staffMenu_classManagement_viewClass_viewScoreboard();
         void staffMenu_studentManagement();
             void staffMenu_studentManagement_updateStudentResult();
+            void staffMenu_studentManagement_updateStudentResult_viewCourse(string className, string student);
 
 /* folder data
 currentYear.txt
