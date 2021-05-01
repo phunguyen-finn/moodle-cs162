@@ -1,2 +1,0 @@
-class name 1 (string)
-class name 2 (string)

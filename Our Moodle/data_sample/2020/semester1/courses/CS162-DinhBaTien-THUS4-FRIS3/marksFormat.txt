@@ -1,2 +1,0 @@
-student id 1 (string) class name (string) total (float) final(float) midterm(float) other(float)
-student id 2 (string) class name (string) total (float) final(float) midterm(float) other(float)

@@ -1,7 +1,0 @@
-course ID (string)
-course name (string)
-instructor (string)
-nCredit (int)
-capacity (int)
-day1 (string) session1 (string)
-day2 (string) session2 (string)

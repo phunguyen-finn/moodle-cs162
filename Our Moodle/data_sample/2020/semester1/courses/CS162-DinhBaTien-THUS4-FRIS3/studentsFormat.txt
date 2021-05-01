@@ -1,2 +1,0 @@
-student id 1 (string) class name (string)
-student id 2 (string) class name (string)
