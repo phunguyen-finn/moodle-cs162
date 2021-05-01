@@ -53,6 +53,15 @@ void setCourseRegistration(Date start, Date end) {
 	fout << end.day << ' ' << end.month << ' ' << end.year << '\n';
 	fout.close();
 }
+void getCourseRegistration(Date& start, Date& end) {
+	Semester semester = getCurrentSemester();
+
+	string path = "data/" + to_string(semester.year) + '/' + to_string(semester.term) + "/registration.txt";
+	ifstream fin(path);
+	fin >> start.day >> start.month >> start.year;
+	fin >> end.day >> end.month >> end.year;
+	fin.close();
+}
 void addStudentToSemester(Vector<string> &students) {
 	Semester semester = getCurrentSemester();
 	int year = semester.year;

@@ -173,6 +173,9 @@
     <ClCompile Include="interfaces\changePasswordWindow.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="controllers\date.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />

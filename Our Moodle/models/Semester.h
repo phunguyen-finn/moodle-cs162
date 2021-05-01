@@ -21,6 +21,7 @@ struct Semester {
 };
 
 void setCourseRegistration(Date start, Date end);
+void getCourseRegistration(Date& start, Date& end);
 void setCurrentSemester(int year, int term, Date start, Date end);
 Semester getCurrentSemester();
 

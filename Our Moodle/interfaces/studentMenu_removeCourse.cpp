@@ -1,6 +1,19 @@
 #include "../models/courseManagementSystem.h"
 
 void studentMenu_removeCourse() {
+    system("CLS"); Heading();
+    cout << "\n\n\t\t\t\t\t       ";
+    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " CHOOSE A COURSE "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
+    cout << "\n\n";
+
+    Date start, end, current;
+    getCourseRegistration(start, end);
+    current = getCurrentDate();
+    if (current < start || end < current) {
+        gotoxy(41, 12); cout << "Course registration session isn't opened";
+        delay(1500); return;
+    }
+
 reenter:
     Semester semester = getCurrentSemester();
     int year = semester.year;
@@ -13,11 +26,6 @@ reenter:
     Vector<Course> courses;
     getCourses(courseList, courses);
     int n = courses.current;
-
-    system("CLS"); Heading();
-    cout << "\n\n\t\t\t\t\t       ";
-    for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " CHOOSE A COURSE "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
-    cout << "\n\n";
 
     gotoxy(2, 12); cout << "No";
     gotoxy(6, 12); cout << " Course ID";
