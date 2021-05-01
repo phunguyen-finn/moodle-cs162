@@ -131,7 +131,7 @@ bool isAbleToAdd(Course course, Vector<Course>& courses) {
 		if ((courses[i].day1 == course.day1 && courses[i].ses1 == course.ses1) ||
 			(courses[i].day1 == course.day2 && courses[i].ses1 == course.ses2) ||
 			(courses[i].day2 == course.day1 && courses[i].ses2 == course.ses1) ||
-			(courses[i].day2 == course.day2 && courses[i].ses2 == course.ses2))
-			return 0;
+			(courses[i].day2 == course.day2 && courses[i].ses2 == course.ses2) ||
+			courses[i].id == course.id) return 0;
 	return 1;
 }
