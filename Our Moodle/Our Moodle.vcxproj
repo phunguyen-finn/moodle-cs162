@@ -157,6 +157,7 @@
     <ClCompile Include="controllers\schoolYear.cpp" />
     <ClCompile Include="controllers\student.cpp" />
     <ClCompile Include="controllers\user.cpp" />
+    <ClCompile Include="interfaces\changePasswordWindow.cpp" />
     <ClCompile Include="interfaces\commandReader.cpp" />
     <ClCompile Include="interfaces\LoginWindow.cpp" />
     <ClCompile Include="interfaces\staffMenu.cpp" />

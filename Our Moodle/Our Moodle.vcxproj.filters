@@ -170,6 +170,9 @@
     <ClCompile Include="interfaces\staffMenu_studentManagement_updateStudentResult_viewCourse.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="interfaces\changePasswordWindow.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />

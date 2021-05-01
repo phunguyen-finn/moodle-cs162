@@ -49,3 +49,24 @@ bool readLine(string& str) {
 	str = input;
 	return 1;
 }
+void readPassword(string& password, int x, int y) {
+	gotoxyCommandReader(x, y); char character;
+	while (character = _getch(), character != 13)
+		if (character == '\b') {
+			if (password.size() == 0) continue;
+			password.pop_back();
+			gotoxyCommandReader(x + (int)password.size(), y); cout << ' ';
+			gotoxyCommandReader(x + (int)password.size(), y);
+		}
+		else {
+			password += character;
+			cout << "*";
+		}
+}
+void gotoxyCommandReader(int x, int y)
+{
+	COORD c;
+	c.X = x;
+	c.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}

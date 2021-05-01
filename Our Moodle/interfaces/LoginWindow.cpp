@@ -28,18 +28,7 @@ reenter:
 
     fflush(stdin);
     gotoxy(59, 25); cin >> username;
-    gotoxy(59, 27); char character;
-    while (character = _getch(), character != 13)
-        if (character == '\b') {
-            if (password.size() == 0) continue;
-            password.pop_back();
-            gotoxy(59 + (int)password.size(), 27); cout << ' ';
-            gotoxy(59 + (int)password.size(), 27);
-        }
-        else {
-            password += character;
-            cout << "*";
-        }
+    readPassword(password, 59, 27);
 
     User account = login(username, password);
     if (account.role == "NONE") {

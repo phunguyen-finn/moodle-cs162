@@ -47,3 +47,15 @@ void getCurrentAccount(User& account) {
     fin >> account.username >> account.password >> account.role >> account.Class;
     fin.close();
 }
+void changePassword(User account, string newPassword) {
+    Vector<User> accounts;
+    getAccounts(accounts);
+
+    int n = accounts.current;
+    for (int i = 0; i < n; ++i) if (accounts[i].username == account.username) {
+        accounts[i].password = newPassword;
+        break;
+    }
+
+    setAccounts(accounts);
+}

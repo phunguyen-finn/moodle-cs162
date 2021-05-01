@@ -25,4 +25,5 @@ void setAccounts(Vector<User>& accounts);
 void addAccount(User account);
 void setCurrentAccount(User account);
 void getCurrentAccount(User& account);
+void changePassword(User account, string newPassword);
 #endif

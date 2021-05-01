@@ -19,6 +19,7 @@ void delay(unsigned int mseconds);
 void set_console_size();
 void Loading();
 void Heading();
+void changePasswordWindow();
 
 void LoginWindow(); 
     void studentMenu();
