@@ -3,9 +3,8 @@
 int main() {
 	
 	set_console_size();
-	// Loading();
+	Loading();
 	LoginWindow(); 
-	// staffMenu_courseManagement_updateCourse();
 	
 	return 0;
 }
