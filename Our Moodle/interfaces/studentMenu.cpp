@@ -14,7 +14,8 @@ reenter:
     cout << "\t\t\t\t\t\t   3. My courses\n\n";
     cout << "\t\t\t\t\t\t   4. My scoreboard\n\n";
     cout << "\t\t\t\t\t\t   5. Change password\n\n";
-    cout << "\t\t\t\t\t\t   6. Logout\n\n";
+    cout << "\t\t\t\t\t\t   6. View profile\n\n";
+    cout << "\t\t\t\t\t\t   7. Logout\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
 
     fflush(stdin);
@@ -29,7 +30,8 @@ reenter:
     case 4: if (getCurrentSemester().term == 0) goto emptysemester;
             studentMenu_viewScoreboard(); break;
     case 5: changePasswordWindow(); break;
-    case 6: return;
+    case 6: studentMenu_viewProfile(); break;
+    case 7: return;
     default: cout << "\n\t\t\t\t\t\tInvalid choice"; delay(1500);
     }
 

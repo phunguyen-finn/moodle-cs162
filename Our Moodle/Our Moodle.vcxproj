@@ -189,6 +189,7 @@
     <ClCompile Include="interfaces\studentMenu_addCourse.cpp" />
     <ClCompile Include="interfaces\studentMenu_removeCourse.cpp" />
     <ClCompile Include="interfaces\studentMenu_viewCourse.cpp" />
+    <ClCompile Include="interfaces\studentMenu_viewProfile.cpp" />
     <ClCompile Include="interfaces\studentMenu_viewScoreboard.cpp" />
     <ClCompile Include="interfaces\supportFunctions.cpp" />
     <ClCompile Include="Source.cpp" />

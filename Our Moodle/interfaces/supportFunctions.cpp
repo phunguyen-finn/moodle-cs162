@@ -57,15 +57,19 @@ void Heading()
     Semester semester = getCurrentSemester();
     int year = semester.year;
     int term = semester.term;
+    User account;
+    getCurrentAccount(account);
 
     cout << "\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
     cout << "\n\t\t\t\t\t\tCOURSE MANAGEMENT SYSTEM";
-    cout << "\n\t\t\t\t\t\t   Year: " << year << " - " << year + 1;
-    cout << "\n\t\t\t\t\t\t   Semester " << term;
-    if (term == 1) cout << "(Fall)\n\n"; else
-        if (term == 2) cout << "(Summer)\n\n"; else
-            if (term == 3) cout << "(Autumn)\n\n";
-            else cout << "(NULL)\n\n";
+    cout << "\n\t\t\t\t         Year: " << year << " - " << year + 1;
+    cout << "\t   Semester " << term;
+    if (term == 1) cout << "(Fall)"; else
+        if (term == 2) cout << "(Summer)"; else
+            if (term == 3) cout << "(Autumn)";
+            else cout << "(NULL)";
+    if (account.role == "staff") cout << "\n\t\t\t\t\t\t   Logged in as: ADMIN\n\n";
+    else cout << "\n\t\t\t\t\t\t   Logged in as: " << account.username << "\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(219); cout << endl;
 }

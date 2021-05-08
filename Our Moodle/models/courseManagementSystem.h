@@ -27,6 +27,7 @@ void LoginWindow();
         void studentMenu_removeCourse(); 
         void studentMenu_viewCourse(); 
         void studentMenu_viewScoreboard();
+        void studentMenu_viewProfile();
     void staffMenu();
         void staffMenu_createSchoolYear();
         void staffMenu_createSemester();

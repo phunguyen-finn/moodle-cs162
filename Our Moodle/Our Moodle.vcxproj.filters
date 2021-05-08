@@ -176,6 +176,9 @@
     <ClCompile Include="controllers\date.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="interfaces\studentMenu_viewProfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Our Moodle.tlog\Our Moodle.lastbuildstate" />

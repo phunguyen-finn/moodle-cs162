@@ -2,6 +2,10 @@
 #define INCLUDE_VECTOR_H
 
 #include <stdlib.h>
+#include <functional>
+#include <assert.h>
+
+using namespace std;
 
 template <typename T> class Vector {
 public:
@@ -62,6 +66,12 @@ public:
 
 	int getCapacity() {
 		return capacity;
+	}
+
+	T find(function<bool(T)> f) {
+		for (int i = 0; i < current; i++) {
+			if (f(arr[i])) return arr[i];
+		}
 	}
 
 	~Vector() {
