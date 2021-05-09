@@ -68,6 +68,7 @@ reenter:
 
         cout << "\n\t\t\t\t\t   Course has been deleted successfully";
         delay(1500);
+        return;
     }
 
     goto reenter;

@@ -74,6 +74,14 @@ public:
 		}
 	}
 
+	Vector<T> filter(function<bool(T)> f) {
+		Vector<T> filtered;
+		for (int i = 0; i < current; i++) {
+			if (f(arr[i])) filtered.push(arr[i]);
+		}
+		return filtered;
+	}
+
 	~Vector() {
 		delete [] arr;
 	}

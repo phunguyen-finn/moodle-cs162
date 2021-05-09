@@ -32,7 +32,7 @@ reenter:
 
     User account = login(username, password);
     if (account.role == "NONE") {
-        cout << "\n\n\t\t\t\t\t\tUnsuccessful login attemp";
+        cout << "\n\n\t\t\t\t\t\tUnsuccessful login attempt";
         delay(1500);
     }
     else {

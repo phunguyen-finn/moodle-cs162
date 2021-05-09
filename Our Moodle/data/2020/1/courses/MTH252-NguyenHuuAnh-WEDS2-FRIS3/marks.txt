@@ -1,5 +1,0 @@
-20125001 8.00 8.00 8.00 8.00 Nguyen Vu Dang Khoa
-20125002 8.00 8.00 8.00 8.00 Tran Bao Loi
-20125003 8.00 8.00 8.00 8.00 Nguyen Duc Manh
-20125004 8.00 8.00 8.00 8.00 Pham Viet Hoang
-20125005 8.00 8.00 8.00 8.00 Luong Hoang Chau

@@ -72,6 +72,7 @@ reenter:
 
             cout << "\n\t\t\t\t\t     Course has been added successfully";
             delay(1500);
+            return;
         }
         else {
             cout << "\n\t\t\t\t\t\t     Invalid course";

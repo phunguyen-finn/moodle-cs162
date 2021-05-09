@@ -1,1 +1,1 @@
-admin abcd staff NONE
+20125001 123 student 20APCS
