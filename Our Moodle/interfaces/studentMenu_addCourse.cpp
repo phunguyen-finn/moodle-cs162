@@ -67,7 +67,7 @@ reenter:
         Vector<Course> studentCourses; 
         getCourses(studentCourseList, studentCourses);
 
-        if (isAbleToAdd(courses[No - 1], studentCourses)) {
+        if (isAbleToAdd(year, term, courses[No - 1], studentCourses)) {
             studentAddCourse(year, term, account.username, account.Class, codeOfCourse(courses[No - 1]));
 
             cout << "\n\t\t\t\t\t     Course has been added successfully";

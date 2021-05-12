@@ -124,9 +124,14 @@ void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<st
 	}
 	fin.close();
 }
-bool isAbleToAdd(Course course, Vector<Course>& courses) {
+bool isAbleToAdd(int year, int term, Course course, Vector<Course>& courses) {
 	int n = courses.current;
+
+	Vector<string> studentList, classList;
+	getCourseStudentList(year, term, course, studentList, classList);
+
 	if (n == 5) return 0;
+	if (studentList.size() >= course.maxCapacity) return 0;
 	for (int i = 0; i < n; ++i)
 		if ((courses[i].day1 == course.day1 && courses[i].ses1 == course.ses1) ||
 			(courses[i].day1 == course.day2 && courses[i].ses1 == course.ses2) ||

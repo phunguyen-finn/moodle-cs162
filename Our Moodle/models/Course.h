@@ -39,5 +39,5 @@ void updateCourseMark(int year, int term, string course, Vector<string>& student
 void updateCourseMark(int year, int term, string course, string student, Mark mark);
 void getCourseScoreboard(int year, int term, Vector<string>& students, Vector<string>& names, Vector<Mark>& marks, string course = codeOfCourse(getCurrentCourse()));
 
-bool isAbleToAdd(Course course, Vector<Course>& courses);
+bool isAbleToAdd(int year, int term, Course course, Vector<Course>& courses);
 #endif
