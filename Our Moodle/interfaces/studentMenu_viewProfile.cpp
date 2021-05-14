@@ -18,12 +18,12 @@ reenter:
     for (int rep = 1; rep <= 5; rep++) cout << char(219); cout << " " << student.lastName << " " << student.firstName << " "; for (int rep = 1; rep <= 5; rep++) cout << char(219);
     cout << "\n\n";
 
-    gotoxy(55, 10 + 2); cout << "Student ID: " << student.id;
-    gotoxy(55, 10 + 4); cout << "First name: " << student.firstName;
-    gotoxy(55, 10 + 6); cout << "Last name: " << student.lastName;
-    gotoxy(55, 10 + 8); cout << "Gender: " << student.gender;
-    gotoxy(55, 10 + 10); cout << "Date of Birth: ";  printf("%02d/%02d/%04d", student.dob.day, student.dob.month, student.dob.year);
-    gotoxy(55, 10 + 12); cout << "Social ID: " << student.socialId;
+    gotoxy(50, 10 + 2); cout << "Student ID: " << student.id;
+    gotoxy(50, 10 + 4); cout << "First name: " << student.firstName;
+    gotoxy(50, 10 + 6); cout << "Last name: " << student.lastName;
+    gotoxy(50, 10 + 8); cout << "Gender: " << student.gender;
+    gotoxy(50, 10 + 10); cout << "Date of Birth: ";  printf("%02d/%02d/%04d", student.dob.day, student.dob.month, student.dob.year);
+    gotoxy(50, 10 + 12); cout << "Social ID: " << student.socialId;
     cout << "\n\n";
     for (int rep = 1; rep <= 120; rep++) cout << char(220); cout << endl;
 
